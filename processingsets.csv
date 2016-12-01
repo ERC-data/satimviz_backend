@@ -1,0 +1,22 @@
+PassengerModes,fuelpcpwr,fuelpcpwr_a,fuelpcpwr_cb,FreightModes,mincledual,mincldual_a,mfuelpwrp,mfuelpwrc,Fuels,Fuels2,minclpwr
+Commodity,Process,Process,Process,Commodity,Process,Process,Process,Commodity,Fuels,Fuels2,Process
+TPPRCAR,MINCLE1,MINCLE-A,MINCLE1,TFHCV1,MINCLE,MINCLN-A,XPWRBIB,PWRBIB,Electricity,Electricity,MINCLD
+TPPRMOT,MINCLE2,MINCLN-A,MINCLE2,TFHCV2,MINCLN,MINCLNU-A,XPWRBIG,PWRBIG,Coal,Coal,MINCLE
+TPPRSUV,MINCLE-A,,MINCLN,TFHCV3,UXLE2-AB,,XPWRBIO,PWRBIO,Gas,Gas,MINCLE1
+TPPUBRT,MINCLN,,,TFHCV4,UXLE-AB,,XPWRBIW,PWRBIW,Oil,LPG,MINCLE2
+TPPUBUS,MINCLN-A,,,TFHCV5,,,XPWRGAS,PWRGAS,Nuclear,Diesel,MINCLE-A
+TPPUGAT,,,,TFHCV6,,,XPWRGIC,PWRGIC,Biomass,Gasoline,MINCLN
+TPPUMBT,,,,TFHCV7,,,XPWRGIH,PWRGIH,Hydro,HFO,UXLE2-AB
+TPPUMER,,,,TFHCV8,,,XPWRGRM,PWRGRM,Hydrogen,AviationFuel,UXLE-AB
+,,,,TFHCV9,,,XPWRGRN,PWRGRN,Methanol,Nuclear,
+,,,,TFLCV,,,XPWRGRS,PWRGRS,Solar,BioDiesel,
+,,,,TFRCO,,,XPWRHYD,PWRHYD,Wind,BioEthanol,
+,,,,TFREX,,,XPWRNUC,PWRNUC,GAS,BiomassOther,
+,,,,TFROT,,,XPWRODS,PWRODS,Diesel,Hydro,
+,,,,,,,XPWRSOL,PWRSOL,Gasoline,Hydrogen,
+,,,,,,,XPWRWND,PWRWND,HFO,Methanol,
+,,,,,,,,,LPG,,
+,,,,,,,,,Crude Oil,,
+,,,,,,,,,BiomassOther,,
+,,,,,,,,,BioDiesel,,
+,,,,,,,,,BioEthanol,,

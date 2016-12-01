@@ -1,0 +1,782 @@
+Process,Sector,Subsector,Subsubsector
+IMPBID,Supply,Imports,Imports
+IMPBIE,Supply,Imports,Imports
+IMPCOK,Supply,Imports,Imports
+IMPGRL,Supply,Imports,Imports
+IMPGWL,Supply,Imports,Imports
+IMPMTH,Supply,Imports,Imports
+IMPNUC,Supply,Imports,Imports
+IMPOAG,Supply,Imports,Imports
+IMPOCR,Supply,Imports,Imports
+IMPODS,Supply,Imports,Imports
+IMPOGS,Supply,Imports,Imports
+IMPOHF,Supply,Imports,Imports
+IMPOKE,Supply,Imports,Imports
+IMPOLP,Supply,Imports,Imports
+MINBIB,Supply,Extraction,Other
+MINBIG,Supply,Extraction,Other
+MINBIO,Supply,Extraction,Other
+MINBIW,Supply,Extraction,Other
+MINCLD,Supply,Extraction,Coal_CB
+MINCLE,Supply,Extraction,Coal_CB
+MINCOA,Supply,Extraction,Coal_CB
+MINGAS,Supply,Extraction,Gas_Cl
+MINGIB,Supply,Extraction,Gas_Cl
+MINGIC,Supply,Extraction,Gas_Cl
+MINGIH,Supply,Extraction,Gas_Sl
+MINHYD,Supply,Extraction,Other
+MINOCR,Supply,Extraction,Other
+MINSOL,Supply,Extraction,Other
+MINWAS,Supply,Extraction,Other
+MINWAT,Supply,Extraction,Other
+MINWND,Supply,Extraction,Other
+MIRCRB,Supply,Imports,Regional
+MIRGRM,Supply,Imports,Regional
+MIRGRN,Supply,Imports,Regional
+MIRGRS,Supply,Imports,Regional
+MNZZZ,,,Other
+PEXCOA,Supply,Exports,Exports
+PEXCOK,Supply,Exports,Exports
+PEXELC,Supply,Exports,Exports
+PEXOAG,Supply,Exports,Exports
+PEXOCR,Supply,Exports,Exports
+PEXODS,Supply,Exports,Exports
+PEXOGS,Supply,Exports,Exports
+PEXOHF,Supply,Exports,Exports
+PEXOKE,Supply,Exports,Exports
+UCOGCLEHGN,Refineries,Hydrogen,Hydrogen
+UCTLCLEIN-E,Refineries,CTL,CTL
+UCTLCLEIN-N,Refineries,CTL,CTL
+UELEHGN,Refineries,Hydrogen,Hydrogen
+UGASGIB-N,,,Other
+UGASGIC-N,,,Other
+UGASGIH-N,,,Other
+UGASGRM-N,Supply,Imports,Imports
+UGASGRS-N,Supply,Imports,Imports
+UGTLGASIN-N,Refineries,GTL,GTL
+UGTLGICCO-E,Refineries,GTL,GTL
+UGTLGICCO-N,Refineries,GTL,GTL
+UHETCLE-E,Refineries,CTL,CTL
+UHETCLE-N,Refineries,CTL,CTL
+ULGTGRLFSRU-N,Refineries,LNG,LNG
+ULGTGRL-N,Refineries,LNG,LNG
+UREFOCRCO-E,Refineries,CrudeRef,CrudeRef
+UREFOCRCO-N,Refineries,CrudeRef,CrudeRef
+UREFOCRIN-E,Refineries,CrudeRef,CrudeRef
+USMRGASHGN,Refineries,Hydrogen,Hydrogen
+USMRGICHGN,Refineries,Hydrogen,Hydrogen
+UTRNGIMGAS,Supply,GasConversion,Other
+XAGRCOA,,,Other
+XAGRELC,,,Other
+XAGRODS,,,Other
+XAGROGS,,,Other
+XAGROHF,,,Other
+XAGROKE,,,Other
+XAGROLP,,,Other
+XCOMCOA,,,Other
+XCOMELC,,,Other
+XCOMGAS,,,Other
+XCOMODS,,,Other
+XCOMOGS,,,Other
+XCOMOHF,,,Other
+XCOMOKE,,,Other
+XCOMOLP,,,Other
+XINDBIB,,,Other
+XINDBIW,,,Other
+XINDCOA,,,Other
+XINDCOK,,,Other
+XINDELC,,,Other
+XINDGAS,,,Other
+XINDODS,,,Other
+XINDOGS,,,Other
+XINDOHF,,,Other
+XINDOLP,,,Other
+XINDWAS,,,Other
+XPWRBIB,,,Other
+XPWRBIG,,,Other
+XPWRBIO,,,Other
+XPWRBIW,,,Other
+XPWRCLD,,,Other
+XPWRCLE,,,Other
+XPWRCRB,,,Other
+XPWRGAS,,,Other
+XPWRGIC,,,Other
+XPWRGIH,,,Other
+XPWRGRM,,,Other
+XPWRGRN,,,Other
+XPWRGRS,,,Other
+XPWRHYD,,,Other
+XPWRNUC,,,Other
+XPWRODS,,,Other
+XPWRSOL,,,Other
+XPWRWND,,,Other
+XRESBIW,,,Other
+XRESCOA,,,Other
+XRESELC,,,Other
+XRESGAS,,,Other
+XRESOKE,,,Other
+XRESOLP,,,Other
+XTRAELC,,,Other
+XTRAGAS,,,Other
+XTRAHGN,,,Other
+XTRAOAG,,,Other
+XTRAODS,,,Other
+XTRAOGS,,,Other
+XTRAOHF,,,Other
+XTRAOKE,,,Other
+XUPSBID,,,Other
+XUPSBIE,,,Other
+XUPSCLE,,,Other
+XUPSELC,,,Other
+XUPSGAS,,,Other
+XUPSGIC,,,Other
+XUPSHEE,,,Other
+XUPSHEN,,,Other
+XUPSOCR,,,Other
+XUPSOHF,,,Other
+ZZBKELCC,,,Other
+ZZBKNRG,,,Other
+AHCOA-E,Agriculture,Agriculture,Other
+AHELC-E,Agriculture,Agriculture,Other
+AHOHF-E,Agriculture,Agriculture,Other
+AHOKE-E,Agriculture,Agriculture,Other
+AHOLP-E,Agriculture,Agriculture,Other
+AIELC-E,Agriculture,Agriculture,Other
+AIODS-E,Agriculture,Agriculture,Other
+AIOGS-E,Agriculture,Agriculture,Other
+AOELC-E,Agriculture,Agriculture,Other
+APELC-E,Agriculture,Agriculture,Other
+ATELC-E,Agriculture,Agriculture,Other
+ATODS-E,Agriculture,Agriculture,Other
+ATOGS-E,Agriculture,Agriculture,Other
+CECELCCEN-E,Commerce,ComExisting,Cooling
+CECELCCEN-N,Commerce,ComExisting,Cooling
+CECELCCHIL-E,Commerce,ComExisting,Cooling
+CECELCHP-E,Commerce,ComExisting,Cooling
+CECELCHP-N,Commerce,ComExisting,Cooling
+CECELCROOM-E,Commerce,ComExisting,Cooling
+CEGELCHAL-E,Commerce,ComExisting,Public Lights
+CEGELCHPM-E,Commerce,ComExisting,Public Lights
+CEGELCHPS-E,Commerce,ComExisting,Public Lights
+CEGELCINC-E,Commerce,ComExisting,Public Lights
+CEGELCLED-N,Commerce,ComExisting,Public Lights
+CEGELCMHL-E,Commerce,ComExisting,Public Lights
+CEHCOA-E,Commerce,ComExisting,Space Heating
+CEHELC-E,Commerce,ComExisting,Space Heating
+CEHELC-N,Commerce,ComExisting,Space Heating
+CEHGAS-N,Commerce,ComExisting,Space Heating
+CEKOLP-E,Commerce,ComExisting,Cooking
+CELELCCFL-E,Commerce,ComExisting,Lighting
+CELELCFLU-E,Commerce,ComExisting,Lighting
+CELELCHAL-E,Commerce,ComExisting,Lighting
+CELELCHID-E,Commerce,ComExisting,Lighting
+CELELCINC-E,Commerce,ComExisting,Lighting
+CELELCLED-N,Commerce,ComExisting,Lighting
+CEOCOA-E,Commerce,ComExisting,Other
+CEOELC-E,Commerce,ComExisting,Other
+CEOGAS-E,Commerce,ComExisting,Other
+CEOODS-E,Commerce,ComExisting,Other
+CEOOGS-E,Commerce,ComExisting,Other
+CEOOHF-E,Commerce,ComExisting,Other
+CEOOKE-E,Commerce,ComExisting,Other
+CERELC-E,Commerce,ComExisting,Refrigeration
+CERELC-N,Commerce,ComExisting,Refrigeration
+CETELC-E,Commerce,ComExisting,Public Water
+CEWCOA-E,Commerce,ComExisting,Water Heating
+CEWELC-E,Commerce,ComExisting,Water Heating
+CEWELCHP-N,Commerce,ComExisting,Water Heating
+CEWELC-N,Commerce,ComExisting,Water Heating
+CEWOLP-E,Commerce,ComExisting,Water Heating
+CNCELCCEN-E,Commerce,ComNew,Cooling
+CNCELCCEN-N,Commerce,ComNew,Cooling
+CNCELCCHIL-E,Commerce,ComNew,Cooling
+CNCELCHP-E,Commerce,ComNew,Cooling
+CNCELCHP-N,Commerce,ComNew,Cooling
+CNCELCROOM-E,Commerce,ComNew,Cooling
+CNGELCHAL-E,Commerce,ComNew,Public Lights
+CNGELCHPM-E,Commerce,ComNew,Public Lights
+CNGELCHPS-E,Commerce,ComNew,Public Lights
+CNGELCINC-E,Commerce,ComNew,Public Lights
+CNGELCLED-N,Commerce,ComNew,Public Lights
+CNGELCMHL-E,Commerce,ComNew,Public Lights
+CNHCOA-E,Commerce,ComNew,Space Heating
+CNHELC-E,Commerce,ComNew,Space Heating
+CNHELC-N,Commerce,ComNew,Space Heating
+CNHGAS-N,Commerce,ComNew,Space Heating
+CNKOLP-E,Commerce,ComNew,Cooking
+CNLELCCFL-E,Commerce,ComNew,Lighting
+CNLELCFLU-E,Commerce,ComNew,Lighting
+CNLELCHAL-E,Commerce,ComNew,Lighting
+CNLELCHID-E,Commerce,ComNew,Lighting
+CNLELCINC-E,Commerce,ComNew,Lighting
+CNLELCLED-N,Commerce,ComNew,Lighting
+CNOCOA-E,Commerce,ComNew,Other
+CNOELC-E,Commerce,ComNew,Other
+CNOGAS-E,Commerce,ComNew,Other
+CNOODS-E,Commerce,ComNew,Other
+CNOOGS-E,Commerce,ComNew,Other
+CNOOHF-E,Commerce,ComNew,Other
+CNOOKE-E,Commerce,ComNew,Other
+CNRELC-E,Commerce,ComNew,Refrigeration
+CNRELC-N,Commerce,ComNew,Refrigeration
+CNTELC-E,Commerce,ComNew,Public Water
+CNWCOA-E,Commerce,ComNew,Water Heating
+CNWELC-E,Commerce,ComNew,Water Heating
+CNWELCHP-N,Commerce,ComNew,Water Heating
+CNWELC-N,Commerce,ComNew,Water Heating
+CNWOLP-E,Commerce,ComNew,Water Heating
+COM_ACHILLER-E,Commerce,ComExisting,Cooling
+COM_ACHILLER-N,Commerce,ComNew,Cooling
+COM_HEATER-E,Commerce,ComExisting,Space Heating
+COM_HEATER-N,Commerce,ComNew,Space Heating
+COMTHRM_SWITCH-E,Commerce,ComExisting,AutoGen
+COMTHRM_SWITCH-N,Commerce,ComNew,AutoGen
+COMTRI_1-E,Commerce,ComExisting,AutoGen
+COMTRI_1-N,Commerce,ComNew,AutoGen
+IPPCHE-E,Industry,Pulp_Paper323,Other
+IPPCHE-E-T1,Industry,Pulp_Paper323,Other
+IPPCHE-E-T2,Industry,Pulp_Paper323,Other
+IPPCHE-N,Industry,Pulp_Paper323,Other
+IPPCHPGAS01-N,Industry,Pulp_Paper323,Other
+IPPCHPGAS02-N,Industry,Pulp_Paper323,Other
+IPPCHPSTM01-N,Industry,Pulp_Paper323,Other
+IPPDIS-E,Industry,Pulp_Paper323,Other
+IPPDIS-E-T1,Industry,Pulp_Paper323,Other
+IPPDIS-E-T2,Industry,Pulp_Paper323,Other
+IPPDIS-N,Industry,Pulp_Paper323,Other
+IPPELCSTM-E,Industry,Pulp_Paper323,Other
+IPPMCH-E,Industry,Pulp_Paper323,Other
+IPPMCH-E-T1,Industry,Pulp_Paper323,Other
+IPPMCH-E-T2,Industry,Pulp_Paper323,Other
+IPPMCH-N,Industry,Pulp_Paper323,Other
+IPPPAP-E,Industry,Pulp_Paper323,Other
+IPPPAP-E-T1,Industry,Pulp_Paper323,Other
+IPPPAP-E-T2,Industry,Pulp_Paper323,Other
+IPPPAP-N,Industry,Pulp_Paper323,Other
+IPPREC-E,Industry,Pulp_Paper323,Other
+IPPREC-E-T1,Industry,Pulp_Paper323,Other
+IPPREC-E-T2,Industry,Pulp_Paper323,Other
+IPPREC-N,Industry,Pulp_Paper323,Other
+IPPSTMBIO-E,Industry,Pulp_Paper323,Other
+IPPSTMBIO-N,Industry,Pulp_Paper323,Other
+IPPSTMBLQ-E,Industry,Pulp_Paper323,Other
+IPPSTMBLQ-N,Industry,Pulp_Paper323,Other
+IPPSTMCOA-E,Industry,Pulp_Paper323,Other
+IPPSTMCOA-N,Industry,Pulp_Paper323,Other
+IPPSTMCOAOIL,Industry,Pulp_Paper323,Other
+IPPSTMGAS-E,Industry,Pulp_Paper323,Other
+IPPSTMGAS-N,Industry,Pulp_Paper323,Other
+IPPSTMOIL-N,Industry,Pulp_Paper323,Other
+XINDELP,,,Other
+XIPPBIB,,,Other
+XIPPCOA,,,Other
+XIPPGAS,,,Other
+XIPPODS,,,Other
+XIPPOGS,,,Other
+XIPPOHF,,,Other
+XIPPOLP,,,Other
+XIPPRECP,,,Other
+IISBFBOF-E,Industry,Iron_Steel351,BFBOF-Existing
+IISBFBOF-E-T1,Industry,Iron_Steel351,BFBOF-Existing
+IISBFBOF-E-T2,Industry,Iron_Steel351,BFBOF-Existing
+IISBFBOF-N,Industry,Iron_Steel351,BFBOF-New
+IISCOREAF-E,Industry,Iron_Steel351,COREAF-Existing
+IISCOREAF-E-T1,Industry,Iron_Steel351,COREAF-Existing
+IISCOREAF-E-T2,Industry,Iron_Steel351,COREAF-Existing
+IISCOV,,,Other
+IISDRIEAF-E,Industry,Iron_Steel351,DRIEAF-Existing
+IISDRIEAF-E-T1,Industry,Iron_Steel351,DRIEAF-Existing
+IISDRIEAF-E-T2,Industry,Iron_Steel351,DRIEAF-Existing
+IISDRIEAF-NC,Industry,Iron_Steel351,DRIEAFCoal-New
+IISDRIEAF-NG,Industry,Iron_Steel351,DRIEAFGas-New
+IISOTHEAF-E,Industry,Iron_Steel351,OtherEAF-Existing
+IISOTHEAF-E-T1,Industry,Iron_Steel351,OtherEAF-Existing
+IISOTHEAF-E-T2,Industry,Iron_Steel351,OtherEAF-Existing
+IISSCREAF-E,Industry,Iron_Steel351,SCREAF-Existing
+IISSCREAF-E-T1,Industry,Iron_Steel351,SCREAF-Existing
+IISSCREAF-E-T2,Industry,Iron_Steel351,SCREAF-Existing
+IISSCREAF-N,Industry,Iron_Steel351,SCREAF-New
+XIISBIO,,,Other
+XIISCKC,,,Other
+XIISCOA,,,Other
+XIISGAS,,,Other
+XIISOIL,,,Other
+XIISOLP,,,Other
+XIISSSC,,,Other
+XIISWAS,,,Other
+INMBRIADV,Industry,NMMProducts34,Other
+INMBRIF2TF,Industry,NMMProducts34,Other
+INMBRISTD,Industry,NMMProducts34,Other
+INMCEMF2TF,Industry,NMMProducts34,Other
+INMCEMFGBM,Industry,NMMProducts34,Other
+INMCEMFGRP,Industry,NMMProducts34,Other
+INMCEMKLD-E,Industry,NMMProducts34,Other
+INMCEMKLD-E-T1,Industry,NMMProducts34,Other
+INMCEMKLD-E-T2,Industry,NMMProducts34,Other
+INMCEMKPP-E,Industry,NMMProducts34,Other
+INMCEMKPP-E-T1,Industry,NMMProducts34,Other
+INMCEMKPP-E-T2,Industry,NMMProducts34,Other
+INMCEMKPP-N,Industry,NMMProducts34,Other
+INMCEMKSP-E,Industry,NMMProducts34,Other
+INMCEMKSP-E-T1,Industry,NMMProducts34,Other
+INMCEMKSP-E-T2,Industry,NMMProducts34,Other
+INMCEMKSP-N,Industry,NMMProducts34,Other
+INMCEMPGBM,Industry,NMMProducts34,Other
+INMCEMPGRP,Industry,NMMProducts34,Other
+INMGLAADV,Industry,NMMProducts34,Other
+INMGLAF2TF,Industry,NMMProducts34,Other
+INMGLASTD,Industry,NMMProducts34,Other
+INMLIMADV,Industry,NMMProducts34,Other
+INMLIMF2TF,Industry,NMMProducts34,Other
+INMLIMSTD,Industry,NMMProducts34,Other
+XINMBIO,,,Other
+XINMCOA,,,Other
+XINMGAS,,,Other
+XINMOIL,,,Other
+ICPAELC-E,Industry,Chemicals33,Other
+ICPCELC-E,Industry,Chemicals33,Other
+ICPEELC-E,Industry,Chemicals33,Other
+ICPFELC-E,Industry,Chemicals33,Other
+ICPHELC-E,Industry,Chemicals33,Other
+ICPKELC-E,Industry,Chemicals33,Other
+ICPLELC-E,Industry,Chemicals33,Other
+ICPOELC-E,Industry,Chemicals33,Other
+ICPPELC-E,Industry,Chemicals33,Other
+ICPSCOA-E,Industry,Chemicals33,Other
+ICPSELC-E,Industry,Chemicals33,Other
+ICPSGAS-E,Industry,Chemicals33,Other
+ICPSOHF-E,Industry,Chemicals33,Other
+ICPSOLP-E,Industry,Chemicals33,Other
+ICPSWAS-E,Industry,Chemicals33,Other
+ICPTGAS-E,Industry,Chemicals33,Other
+IFBAELC-E,Industry,Food_Bev_Tob30,Other
+IFBCELC-E,Industry,Food_Bev_Tob30,Other
+IFBEELC-E,Industry,Food_Bev_Tob30,Other
+IFBFELC-E,Industry,Food_Bev_Tob30,Other
+IFBHELC-E,Industry,Food_Bev_Tob30,Other
+IFBKELC-E,Industry,Food_Bev_Tob30,Other
+IFBLELC-E,Industry,Food_Bev_Tob30,Other
+IFBOELC-E,Industry,Food_Bev_Tob30,Other
+IFBPELC-E,Industry,Food_Bev_Tob30,Other
+IFBSBIB-E,Industry,Food_Bev_Tob30,Other
+IFBSCOA-E,Industry,Food_Bev_Tob30,Other
+IFBSELC-E,Industry,Food_Bev_Tob30,Other
+IFBSGAS-E,Industry,Food_Bev_Tob30,Other
+IFBSOHF-E,Industry,Food_Bev_Tob30,Other
+IFBSOLP-E,Industry,Food_Bev_Tob30,Other
+IFBSWAS-E,Industry,Food_Bev_Tob30,Other
+IMIAELC-E,Industry,Mining2,Other
+IMICELC-E,Industry,Mining2,Other
+IMIEELC-E,Industry,Mining2,Other
+IMIFELC-E,Industry,Mining2,Other
+IMIHELC-E,Industry,Mining2,Other
+IMIKELC-E,Industry,Mining2,Other
+IMILELC-E,Industry,Mining2,Other
+IMIOELC-E,Industry,Mining2,Other
+IMIPELC-E,Industry,Mining2,Other
+IMIRODS-E,Industry,Mining2,Other
+IMISCOA-E,Industry,Mining2,Other
+IMISELC-E,Industry,Mining2,Other
+IMISGAS-E,Industry,Mining2,Other
+IMISOHF-E,Industry,Mining2,Other
+IMISOLP-E,Industry,Mining2,Other
+IMISWAS-E,Industry,Mining2,Other
+INFAELC-E,Industry,PNFMetals352,Other
+INFCELC-E,Industry,PNFMetals352,Other
+INFEELC-E,Industry,PNFMetals352,Other
+INFFELC-E,Industry,PNFMetals352,Other
+INFHELC-E,Industry,PNFMetals352,Other
+INFKELC-E,Industry,PNFMetals352,Other
+INFLELC-E,Industry,PNFMetals352,Other
+INFOELC-E,Industry,PNFMetals352,Other
+INFPELC-E,Industry,PNFMetals352,Other
+INFSCOA-E,Industry,PNFMetals352,Other
+INFSELC-E,Industry,PNFMetals352,Other
+INFSGAS-E,Industry,PNFMetals352,Other
+INFSOHF-E,Industry,PNFMetals352,Other
+INFSOLP-E,Industry,PNFMetals352,Other
+INFSWAS-E,Industry,PNFMetals352,Other
+IOTAELC-E,Industry,IndOther,Other
+IOTCELC-E,Industry,IndOther,Other
+IOTEELC-E,Industry,IndOther,Other
+IOTFELC-E,Industry,IndOther,Other
+IOTHELC-E,Industry,IndOther,Other
+IOTKELC-E,Industry,IndOther,Other
+IOTLELC-E,Industry,IndOther,Other
+IOTOELC-E,Industry,IndOther,Other
+IOTPELC-E,Industry,IndOther,Other
+IOTRODS-E,Industry,IndOther,Other
+IOTSCOA-E,Industry,IndOther,Other
+IOTSELC-E,Industry,IndOther,Other
+IOTSGAS-E,Industry,IndOther,Other
+IOTSOHF-E,Industry,IndOther,Other
+IOTSOLP-E,Industry,IndOther,Other
+IOTSWAS-E,Industry,IndOther,Other
+XICPELC,,,Other
+XICPGAS,,,Other
+XIFBELC,,,Other
+XIFBGAS,,,Other
+XIISELC,,,Other
+XIMIELC,,,Other
+XIMIGAS,,,Other
+XINFELC,,,Other
+XINFGAS,,,Other
+XINMELC,,,Other
+XIOTELC,,,Other
+XIOTGAS,,,Other
+XIPPELC,,,Other
+EPD-E,,,Other
+EPD-N,,,Other
+EPP-E,,,Other
+EPP-N,,,Other
+EPT-E,Power,EPumpStorage,EPumpStorage
+EPT-N,Power,EPumpStorage,EPumpStorage
+ERBIG-N,Power,EBiomass,EBiomass
+ERBIO-N,Power,EBiomass,EBiomass
+ERHYDB-I,Power,EImports,EImports
+ERHYD-E,Power,EHydro,EHydro
+ERHYDF-I,Power,EImports,EImports
+ERHYDGIE-I,Power,EImports,EImports
+ERHYDGIW-I,Power,EImports,EImports
+ERHYDH-I,Power,EImports,EImports
+ERHYD-I,Power,EImports,EImports
+ERHYDI-I,Power,EImports,EImports
+ERHYDK-I,Power,EImports,EImports
+ERHYDM-I,Power,EImports,EImports
+ERHYD-N,Power,EHydro,EHydro
+ERSOLPCF-N,Power,EPV,EPV_Grid
+ERSOLPCT-N,Power,EPV,EPV_Grid
+ERSOLPRC-N,Power,EPV,EPV_RfTpCOM
+ERSOLPRR-N,Power,EPV,EPV_RfTpRES
+ERSOLTC03-N,Power,ECSP,ECSP
+ERSOLTC06-N,Power,ECSP,ECSP
+ERSOLTC09-N,Power,ECSP,ECSP
+ERSOLTC12-N,Power,ECSP,ECSP
+ERSOLTC14-N,Power,ECSP,ECSP
+ERSOLTT00-N,Power,ECSP,ECSP
+ERSOLTT03-N,Power,ECSP,ECSP
+ERSOLTT06-N,Power,ECSP,ECSP
+ERSOLTT09-N,Power,ECSP,ECSP
+ERWNDH-N,Power,EWind,EWind
+ERWNDM-N,Power,EWind,EWind
+ETCLDFB-N,Power,ECoal,ECoal_CB
+ETCLEIG-N,Power,ECoal,ECoal_CB
+ETCLEPFD-E,Power,ECoal,ECoal_CB
+ETCLEPFM-E,Power,ECoal,ECoal_CB
+ETCLEPFS-E,Power,ECoal,ECoal_CB
+ETCLEPFSI-E,Power,ECoal,ECoal_CB
+ETCLEPFSS-E,Power,ECoal,ECoal_CB
+ETCLEPFW-E,Power,ECoal,ECoal_CB
+ETCLESC-N,Power,ECoal,ECoal_CB
+ETCRBSCBO-I,Power,EImports,EImports
+ETCRBSCMO-I,Power,EImports,EImports
+ETGASCC-N,Power,EGas,EGas
+ETGASCCSS-N,Power,EGas,EGas
+ETGASGT-N,Power,EGas,EGas
+ETGICCC-N,Power,EGas,EGas
+ETGICGT-N,Power,EGas,EGas
+ETGIHCC-N,Power,EGas,EGas
+ETGIHGT-N,Power,EGas,EGas
+ETGRMCC-N,Power,EGas,EGas
+ETGRNCC-I,Power,EImports,EImports
+ETNUC-E,Power,ENuclear,ENuclear
+ETNUC-N,Power,ENuclear,ENuclear
+ETODSGT-E,Power,EOil,EOil
+ETODSGT-N,Power,EOil,EOil
+ETRANS,,,Other
+ETRANSDUM,,,Other
+RHEHBIWSTOV-E,Residential,HighIncome,Space Heating
+RHEHCOASTOV-E,Residential,HighIncome,Space Heating
+RHEHELCHEATBAR-E,Residential,HighIncome,Space Heating
+RHEHELCHEATFAN-E,Residential,HighIncome,Space Heating
+RHEHELCHEATFIN-E,Residential,HighIncome,Space Heating
+RHEHGASCHP-N,Residential,HighIncome,Space Heating
+RHEHGASHEAT-N,Residential,HighIncome,Space Heating
+RHEHOKEHEAT-E,Residential,HighIncome,Space Heating
+RHEHOLPHEAT-E,Residential,HighIncome,Space Heating
+RHEKBIWSTOV-E,Residential,HighIncome,Cooking
+RHEKELCSTOV-E,Residential,HighIncome,Cooking
+RHEKGASSTOV-E,Residential,HighIncome,Cooking
+RHEKOKEPRIMUS-E,Residential,HighIncome,Cooking
+RHEKOKETOYO-N,Residential,HighIncome,Cooking
+RHEKOLPSTOV-E,Residential,HighIncome,Cooking
+RHELELCCFL-E,Residential,HighIncome,Lighting
+RHELELCINC-E,Residential,HighIncome,Lighting
+RHELELCLED-E,Residential,HighIncome,Lighting
+RHENOKEOTH-E,Residential,HighIncome,Non Energy
+RHEOELCOTH-E,Residential,HighIncome,Other
+RHEOELCOTH-EFF-N,Residential,HighIncome,Other
+RHERELCDF-E,Residential,HighIncome,Refrigeration
+RHERELCDF-EFF-N,Residential,HighIncome,Refrigeration
+RHERELCREF-E,Residential,HighIncome,Refrigeration
+RHERELCREF-EFF-N,Residential,HighIncome,Refrigeration
+RHEWELCCHP-N,Residential,HighIncome,Water Heating
+RHEWELCGEYBLA-E,Residential,HighIncome,Water Heating
+RHEWELCGEY-E,Residential,HighIncome,Water Heating
+RHEWELCSWH-E,Residential,HighIncome,Water Heating
+RHEWGASCHP-N,Residential,HighIncome,Water Heating
+RHEWGASHEAT-N,Residential,HighIncome,Water Heating
+RHEWOKESTOV-E,Residential,HighIncome,Water Heating
+RHEWOLPSTOV-E,Residential,HighIncome,Water Heating
+RLEHBIWBNM-E,Residential,LowIncome,Space Heating
+RLEHBIWOPEN-E,Residential,LowIncome,Space Heating
+RLEHCOABNM-E,Residential,LowIncome,Space Heating
+RLEHELCHEATBAR-E,Residential,LowIncome,Space Heating
+RLEHELCHEATFAN-E,Residential,LowIncome,Space Heating
+RLEHELCHEATFIN-E,Residential,LowIncome,Space Heating
+RLEHOKEHEAT-E,Residential,LowIncome,Space Heating
+RLEHOLPHET-E,Residential,LowIncome,Space Heating
+RLEKBIWBNM-E,Residential,LowIncome,Cooking
+RLEKBIWOPEN-E,Residential,LowIncome,Cooking
+RLEKCOABNM-E,Residential,LowIncome,Cooking
+RLEKELCHOT-E,Residential,LowIncome,Cooking
+RLEKELCMIC-E,Residential,LowIncome,Cooking
+RLEKELCSTOV-E,Residential,LowIncome,Cooking
+RLEKOKEPRIMUS-E,Residential,LowIncome,Cooking
+RLEKOKETOYO-N,Residential,LowIncome,Cooking
+RLEKOKEWICK-E,Residential,LowIncome,Cooking
+RLEKOKEWICK-N,Residential,LowIncome,Cooking
+RLEKOLPRING-E,Residential,LowIncome,Cooking
+RLEKOLPSTOV-E,Residential,LowIncome,Cooking
+RLELELCCFL-E,Residential,LowIncome,Lighting
+RLELELCINC-E,Residential,LowIncome,Lighting
+RLELELCLED-N,Residential,LowIncome,Lighting
+RLENOKEOTH-E,Residential,LowIncome,Non Energy
+RLEOELCOTH-E,Residential,LowIncome,Other
+RLEOELCOTH-EFF-E,Residential,LowIncome,Other
+RLERELCREF-E,Residential,LowIncome,Refrigeration
+RLERELCREF-EFF-N,Residential,LowIncome,Refrigeration
+RLEWBIWKETBI-E,Residential,LowIncome,Water Heating
+RLEWCOAKETCOA-E,Residential,LowIncome,Water Heating
+RLEWELCGEY-E,Residential,LowIncome,Water Heating
+RLEWELCKET-E,Residential,LowIncome,Water Heating
+RLEWELCSWH-E,Residential,LowIncome,Water Heating
+RLEWOKEKETPR-E,Residential,LowIncome,Water Heating
+RLEWOKEKETT-N,Residential,LowIncome,Water Heating
+RLEWOKEKETWI-E,Residential,LowIncome,Water Heating
+RLEWOKEKETWI-N,Residential,LowIncome,Water Heating
+RLEWOLPKETLPG-E,Residential,LowIncome,Water Heating
+RLNHBIWBNM-E,Residential,LowIncome,Space Heating
+RLNHBIWOPEN-E,Residential,LowIncome,Space Heating
+RLNHCOABNM-E,Residential,LowIncome,Space Heating
+RLNHOKEHEAT-E,Residential,LowIncome,Space Heating
+RLNHOLPHET-E,Residential,LowIncome,Space Heating
+RLNKBIWBNM-E,Residential,LowIncome,Cooking
+RLNKBIWOPEN-E,Residential,LowIncome,Cooking
+RLNKCOABNM-E,Residential,LowIncome,Cooking
+RLNKOKEPRIMUS-E,Residential,LowIncome,Cooking
+RLNKOKETOYO-N,Residential,LowIncome,Cooking
+RLNKOKEWICK-E,Residential,LowIncome,Cooking
+RLNKOKEWICK-N,Residential,LowIncome,Cooking
+RLNKOLPRING-E,Residential,LowIncome,Cooking
+RLNKOLPSTOV-E,Residential,LowIncome,Cooking
+RLNLOKEWICK-E,Residential,LowIncome,Lighting
+RLNNOKEOTH-E,Residential,LowIncome,Non Energy
+RLNWBIWKETBI-E,Residential,LowIncome,Water Heating
+RLNWCOABNM-E,Residential,LowIncome,Water Heating
+RLNWOKEKETPR-E,Residential,LowIncome,Water Heating
+RLNWOKEKETT-N,Residential,LowIncome,Water Heating
+RLNWOKEKETWI-E,Residential,LowIncome,Water Heating
+RLNWOKEKETWI-N,Residential,LowIncome,Water Heating
+RLNWOLPKETLPG-E,Residential,LowIncome,Water Heating
+RMEHBIWSTOV-E,Residential,MiddleIncome,Space Heating
+RMEHCOASTOV-E,Residential,MiddleIncome,Space Heating
+RMEHELCHEATBAR-E,Residential,MiddleIncome,Space Heating
+RMEHELCHEATFAN-E,Residential,MiddleIncome,Space Heating
+RMEHELCHEATFIN-E,Residential,MiddleIncome,Space Heating
+RMEHGASCHP-N,Residential,MiddleIncome,Space Heating
+RMEHGASHEAT-N,Residential,MiddleIncome,Space Heating
+RMEHOKEHEAT-E,Residential,MiddleIncome,Space Heating
+RMEHOLPHEAT-E,Residential,MiddleIncome,Space Heating
+RMEKBIWSTOV-E,Residential,MiddleIncome,Cooking
+RMEKCOABNM-E,Residential,MiddleIncome,Cooking
+RMEKELCSTOV-E,Residential,MiddleIncome,Cooking
+RMEKGASSTOV-E,Residential,MiddleIncome,Cooking
+RMEKOKEPRIMUS-E,Residential,MiddleIncome,Cooking
+RMEKOKETOYO-N,Residential,MiddleIncome,Cooking
+RMEKOKEWICK-E,Residential,MiddleIncome,Cooking
+RMEKOKEWICK-N,Residential,MiddleIncome,Cooking
+RMEKOLPSTOV-E,Residential,MiddleIncome,Cooking
+RMELELCCFL-E,Residential,MiddleIncome,Lighting
+RMELELCINC-E,Residential,MiddleIncome,Lighting
+RMELELCLED-E,Residential,MiddleIncome,Lighting
+RMENOKEOTH-E,Residential,MiddleIncome,Non Energy
+RMEOELCOTH-E,Residential,MiddleIncome,Other
+RMEOELCOTH-EFF-N,Residential,MiddleIncome,Other
+RMERELCDF-E,Residential,MiddleIncome,Refrigeration
+RMERELCDF-EFF-N,Residential,MiddleIncome,Refrigeration
+RMERELCREF-E,Residential,MiddleIncome,Refrigeration
+RMERELCREF-EFF-N,Residential,MiddleIncome,Refrigeration
+RMEWBIWKETBI-E,Residential,MiddleIncome,Water Heating
+RMEWCOASTOV-E,Residential,MiddleIncome,Water Heating
+RMEWELCCHP-N,Residential,MiddleIncome,Water Heating
+RMEWELCGEYBLA-E,Residential,MiddleIncome,Water Heating
+RMEWELCGEY-E,Residential,MiddleIncome,Water Heating
+RMEWELCSWH-E,Residential,MiddleIncome,Water Heating
+RMEWGASCHP-N,Residential,MiddleIncome,Water Heating
+RMEWGASGEY-N,Residential,MiddleIncome,Water Heating
+RMEWOKEKETPR-E,Residential,MiddleIncome,Water Heating
+RMEWOLPKETLPG-E,Residential,MiddleIncome,Water Heating
+RMNHBIWBNM-E,Residential,MiddleIncome,Space Heating
+RMNHBIWOPEN-E,Residential,MiddleIncome,Space Heating
+RMNHCOABNM-E,Residential,MiddleIncome,Space Heating
+RMNHGASCHP-N,Residential,MiddleIncome,Space Heating
+RMNHGASHET-N,Residential,MiddleIncome,Space Heating
+RMNHOKEHEAT-E,Residential,MiddleIncome,Space Heating
+RMNHOLPHET-E,Residential,MiddleIncome,Space Heating
+RMNKBIWBNM-E,Residential,MiddleIncome,Cooking
+RMNKBIWOPEN-E,Residential,MiddleIncome,Cooking
+RMNKCOABNM-E,Residential,MiddleIncome,Cooking
+RMNKGASSTOV-N,Residential,MiddleIncome,Cooking
+RMNKOKEPRIMUS-E,Residential,MiddleIncome,Cooking
+RMNKOKETOYO-N,Residential,MiddleIncome,Cooking
+RMNKOKEWICK-E,Residential,MiddleIncome,Cooking
+RMNKOKEWICK-N,Residential,MiddleIncome,Cooking
+RMNKOLPRING-E,Residential,MiddleIncome,Cooking
+RMNKOLPSTOV-E,Residential,MiddleIncome,Cooking
+RMNLOKEWICK-E,Residential,MiddleIncome,Lighting
+RMNNOKEOTH-E,Residential,MiddleIncome,Non Energy
+RMNWBIWKETBI-E,Residential,MiddleIncome,Water Heating
+RMNWCOAKETCOA-E,Residential,MiddleIncome,Water Heating
+RMNWGASCHP-N,Residential,MiddleIncome,Water Heating
+RMNWGASGEY-N,Residential,MiddleIncome,Water Heating
+RMNWOKEKETPR-E,Residential,MiddleIncome,Water Heating
+RMNWOKEKETT-N,Residential,MiddleIncome,Water Heating
+RMNWOKEKETWI-E,Residential,MiddleIncome,Water Heating
+RMNWOKEKETWI-N,Residential,MiddleIncome,Water Heating
+RMNWOLPKETLPG-E,Residential,MiddleIncome,Water Heating
+TAJETOKE-E,Transport,Aviation,Aviation
+TAJETOKE-N,Transport,Aviation,Aviation
+TAOAGOAG-E,Transport,Aviation,Aviation
+TAOAGOAG-N,Transport,Aviation,Aviation
+TFHCV1GAS-N,Transport,FreightRoad,HCV1Gas
+TFHCV1ODS-E,Transport,FreightRoad,HCV1Oil
+TFHCV1ODS-N,Transport,FreightRoad,HCV1Oil
+TFHCV1OGS-E,Transport,FreightRoad,HCV1Oil
+TFHCV1OGS-N,Transport,FreightRoad,HCV1Oil
+TFHCV1OGS-R,Transport,FreightRoad,HCV1Gas
+TFHCV2GAS-N,Transport,FreightRoad,HCV2-5Gas
+TFHCV2ODS-E,Transport,FreightRoad,HCV2-5Oil
+TFHCV2ODS-N,Transport,FreightRoad,HCV2-5Oil
+TFHCV3GAS-N,Transport,FreightRoad,HCV2-5Gas
+TFHCV3ODS-E,Transport,FreightRoad,HCV2-5Oil
+TFHCV3ODS-N,Transport,FreightRoad,HCV2-5Oil
+TFHCV4GAS-N,Transport,FreightRoad,HCV2-5Gas
+TFHCV4ODS-E,Transport,FreightRoad,HCV2-5Oil
+TFHCV4ODS-N,Transport,FreightRoad,HCV2-5Oil
+TFHCV5GAS-N,Transport,FreightRoad,HCV2-5Gas
+TFHCV5ODS-E,Transport,FreightRoad,HCV2-5Oil
+TFHCV5ODS-N,Transport,FreightRoad,HCV2-5Oil
+TFHCV6GAS-N,Transport,FreightRoad,HCV6-9Gas
+TFHCV6ODS-E,Transport,FreightRoad,HCV6-9Oil
+TFHCV6ODS-N,Transport,FreightRoad,HCV6-9Oil
+TFHCV7GAS-N,Transport,FreightRoad,HCV6-9Gas
+TFHCV7ODS-E,Transport,FreightRoad,HCV6-9Oil
+TFHCV7ODS-N,Transport,FreightRoad,HCV6-9Oil
+TFHCV8GAS-N,Transport,FreightRoad,HCV6-9Gas
+TFHCV8ODS-E,Transport,FreightRoad,HCV6-9Oil
+TFHCV8ODS-N,Transport,FreightRoad,HCV6-9Oil
+TFHCV9GAS-N,Transport,FreightRoad,HCV6-9Gas
+TFHCV9ODS-E,Transport,FreightRoad,HCV6-9Oil
+TFHCV9ODS-N,Transport,FreightRoad,HCV6-9Oil
+TFLCVGAS-N,Transport,FreightRoad,LCVGas
+TFLCVODS-E,Transport,FreightRoad,LCV1Oil
+TFLCVODS-N,Transport,FreightRoad,LCV1Oil
+TFLCVOGS-E,Transport,FreightRoad,LCV1Oil
+TFLCVOGS-N,Transport,FreightRoad,LCV1Oil
+TFLCVOGS-R,Transport,FreightRoad,LCVGas
+TFPIPELC-E,Transport,FreightPip,FreightPip
+TFPIPELC-N,Transport,FreightPip,FreightPip
+TFRCOELC-E,Transport,FreightRail,FreightRail
+TFRCOELC-N,Transport,FreightRail,FreightRail
+TFRCOODS-E,Transport,FreightRail,FreightRail
+TFREXELC-N,Transport,FreightRail,FreightRail
+TFREXELCR-E,Transport,FreightRail,FreightRail
+TFREXODSR-E,Transport,FreightRail,FreightRail
+TFROTELC-E,Transport,FreightRail,FreightRail
+TFROTELC-N,Transport,FreightRail,FreightRail
+TFROTODS-E,Transport,FreightRail,FreightRail
+TPPRCARELC-N,Transport,PassPriv,CarElectric
+TPPRCARGAS-N,Transport,PassPriv,CarGas
+TPPRCARHGNF-N,Transport,PassPriv,CarHydrogen
+TPPRCARODS-E,Transport,PassPriv,CarOil
+TPPRCARODSH-N,Transport,PassPriv,CarHybrid
+TPPRCARODS-N,Transport,PassPriv,CarOil
+TPPRCAROGS-E,Transport,PassPriv,CarOil
+TPPRCAROGSH-E,Transport,PassPriv,CarOil
+TPPRCAROGSH-N,Transport,PassPriv,CarHybrid
+TPPRCAROGS-N,Transport,PassPriv,CarOil
+TPPRCAROGS-R,Transport,PassPriv,CarOil
+TPPRMOTOGS-E,Transport,PassPriv,MotoOil
+TPPRMOTOGS-N,Transport,PassPriv,MotoOil
+TPPRSUVGAS-N,Transport,PassPriv,SUVGas
+TPPRSUVHGNF-N,Transport,PassPriv,SUVHydrogen
+TPPRSUVODS-E,Transport,PassPriv,SUVOil
+TPPRSUVODSH-N,Transport,PassPriv,SUVHybrid
+TPPRSUVODS-N,Transport,PassPriv,SUVOil
+TPPRSUVOGS-E,Transport,PassPriv,SUVOil
+TPPRSUVOGSH-N,Transport,PassPriv,SUVHybrid
+TPPRSUVOGS-N,Transport,PassPriv,SUVOil
+TPPRSUVOGS-R,Transport,PassPriv,SUVOil
+TPPUBRTELC-N,Transport,PassPub,BRTElc
+TPPUBRTGAS-N,Transport,PassPub,BRTGas
+TPPUBRTHGNF-N,Transport,PassPub,BRTHydrogen
+TPPUBRTODS-N,Transport,PassPub,BRTOil
+TPPUBUSGAS-N,Transport,PassPub,BusGas
+TPPUBUSHGNF-N,Transport,PassPub,BusHydrogen
+TPPUBUSODS-E,Transport,PassPub,BusOil
+TPPUBUSODS-N,Transport,PassPub,BusOil
+TPPUBUSODS-R,Transport,PassPub,BusGas
+TPPUGATELC-N,Transport,PassPub,PassengerRail
+TPPUMBTGAS-N,Transport,PassPub,MinibusGas
+TPPUMBTHGNF-N,Transport,PassPub,MinibusHydrogen
+TPPUMBTODS-E,Transport,PassPub,MinibusOil
+TPPUMBTODSH-N,Transport,PassPub,MinibusHybrid
+TPPUMBTODS-N,Transport,PassPub,MinibusOil
+TPPUMBTOGS-E,Transport,PassPub,MinibusOil
+TPPUMBTOGS-N,Transport,PassPub,MinibusOil
+TPPUMBTOGS-R,Transport,PassPub,MinibusGas
+TPPUMERELC-E,Transport,PassPub,PassengerRail
+TPPUMERELC-N,Transport,PassPub,PassengerRail
+TSHFOOHF-E,Transport,TraOther,TraOther
+TSHFOOHF-N,Transport,TraOther,TraOther
+MINAGR-N,Supply,Extraction,Other
+MINBBE,Supply,Extraction,Other
+MINBCA,Supply,Extraction,Other
+MINBSR,Supply,Extraction,Other
+MINBSY,Supply,Extraction,Other
+MINMTH,Supply,Extraction,Other
+UBBEBIE-N,Refineries,BioRef,BioRefEthanol
+UBCABID-N,Refineries,BioRef,BioRefDiesel
+UBSRBIE-N,Refineries,BioRef,BioRefEthanol
+UBSYBID-N,Refineries,BioRef,BioRefDiesel
+UINDSCOA1-N,Refineries,BioRef,BioRefSteam
+UINDSGAS1-N,Refineries,BioRef,BioRefSteam
+XAGRBIO,,,Other
+XTRABID,,,Other
+XTRABIE,,,Other
+ETCLEPFD-E-A,Power,ECoal,ECoal_WB
+ETCLESC-N-A,Power,ECoal,ECoal_WB
+MINCLE1,Supply,Extraction,Coal_CB
+MINCLE2,Supply,Extraction,Coal_CB
+MINCLE3,Supply,Extraction,Coal_CB
+MINCLE-A,Supply,Extraction,Coal_WB
+MINCLN,Supply,Extraction,Coal_CB
+MINCLN-A,Supply,Extraction,Coal_WB
+MINCLNU-A,Supply,Extraction,Coal_WB
+MINCLS,Supply,Extraction,Coal_CB
+MINCLS-A,Supply,Extraction,Coal_WB
+PEXCME,Supply,Exports,Exports
+UCTLCLEIN-N-A,Refineries,CTL,CTL
+UXCWCME,Supply,CoalWashing,Exports
+UXCWCOA,Supply,CoalWashing,Exports
+UXLE2-AB,Supply,Extraction,RailTransfer2
+UXLE2-AB,Supply,Extraction,RailTransfer
+UXLE-BR,Supply,Extraction,CB_RBCT
+UXLE-AB,Supply,Extraction,Transfer
+XPWRCLE-A,,,Other
+XPWRCLEC,,,Other
+XPWRCLEC-A,,,Other
+XUPSCLE-S,,,Other
+PEXGAS,Supply,Exports,Exports
+UGASGIHE-N,,,Other
