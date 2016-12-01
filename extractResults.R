@@ -406,7 +406,7 @@ processGDX <- function(gdxPath,gdxname){
   
   ERPRICE = merge(merge(TCST_PWROTH,merge(TCST_PWRCL_T,TCST_ELE)),varact_pwr_an)
   ERPRICE = ERPRICE%>% mutate(t_pwrcost = (3.6/1000)*(tcst_pwrcl_t+tcst_ele+other_pwr_costs))%>%
-    mutate(Elec_price_RpkWh = t_pwrcost/t_pwract)
+    mutate(Elec_price_RpkWh = round(t_pwrcost/t_pwract,4))
   ERPRICE = ERPRICE[,names(ERPRICE)%in% c('Region','Year','Elec_price_RpkWh')] # keep only the data we want. 
   ERPRICE$Case = myCase #add scenario name. 
   
