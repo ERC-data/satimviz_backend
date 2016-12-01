@@ -396,16 +396,19 @@ processGDX <- function(gdxPath,gdxname){
     summarise(other_pwr_costs =sum(other_pwr_costs))
   
   #regulated elctricity price
+    #the gams code: 
+    #ERPRICE(T,RUN) = (TCST_PWRCLT(T)+TCST_PWROTH(T)+TCST_ELE(T))/VARACTPL1(T,'Power',RUN)*3.6/1000
+  
   varact_pwr = addPRCmap(VARACT)
   varact_pwr = varact_pwr[varact_pwr$Sector == 'Power',]
-  ERPRICE = merge(merge(TCST_PWROTH,merge(TCST_PWRCL_T,TCST_ELE,all = TRUE),all = TRUE),varact_pwr)
-  ERPRICE[is.na(ERPRICE)] = 0
+  varact_pwr_an = varact_pwr%>% group_by(Region,Year)%>%
+    summarise(t_pwract = sum(VAR_ACT))
+  
+  ERPRICE = merge(merge(TCST_PWROTH,merge(TCST_PWRCL_T,TCST_ELE)),varact_pwr_an)
   ERPRICE = ERPRICE%>% mutate(t_pwrcost = (3.6/1000)*(tcst_pwrcl_t+tcst_ele+other_pwr_costs))%>%
-    group_by(Region,Year,t_pwrcost)%>%
-    summarise(t_pwract = sum(VAR_ACT))%>%
     mutate(Elec_price_RpkWh = t_pwrcost/t_pwract)
-  ERPRICE = ERPRICE[,c(1,2,5)]
-  ERPRICE$Case = myCase
+  ERPRICE = ERPRICE[,names(ERPRICE)%in% c('Region','Year','Elec_price_RpkWh')] # keep only the data we want. 
+  ERPRICE$Case = myCase #add scenario name. 
   
   #TRANSPORT PROCESSING
   
@@ -494,10 +497,10 @@ processGDX <- function(gdxPath,gdxname){
     pwr_flows = droplevels(pwr_flows)
     
     #POWER SECTOR - costs
-    pwr_costs = merge(merge(CST_INVC,CST_ACTC),CST_FIXC)
+    pwr_costs = merge(merge(CST_INVC,CST_ACTC,all.x = T),CST_FIXC,all.x = T)
     pwr_costs = pwr_costs[pwr_costs$Sector == 'Power',]
-    
     pwr_costs$Case = myCase
+    pwr_costs[is.na(pwr_costs)]= 0
     pwr_costs = droplevels(pwr_costs)
     
     tmp = merge(CAP_T,NCAPL,all = TRUE)#add capacity
