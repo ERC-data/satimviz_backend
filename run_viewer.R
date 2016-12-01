@@ -1,1 +1,1 @@
-shiny::runApp(paste('C:/EMOD/Rfiles/','ShinyApp/',sep =''),launch.browser = TRUE)
+shiny::runApp(paste('C:/EMOD/satimviz/','ShinyApp/',sep =''),launch.browser = TRUE) #call the shinyApp 
