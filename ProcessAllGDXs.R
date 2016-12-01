@@ -8,13 +8,11 @@ library(rpivotTable)
 library(data.table)
 library(shiny)
 
-projname = "scenarios"
-
 # location of your GAMS main directory. 
 GAMS_lib_dir = 'C:/GAMS/win64/24.7' 
 
 #main working directory for this file/script and colourcoding files etc. 
-workdir = 'C:/EMOD/Rfiles/'
+workdir = 'C:/EMOD/satimviz_backend/'
 
 #the GDX files location
 gdxLocation = 'C:/EMOD/GDXout/'
@@ -26,7 +24,7 @@ igdx(GAMS_lib_dir)
 
 #LOAD FUNCTIONS
 
-source(paste(workdir,'extractResults_v5.R',sep ='/'),local = FALSE)
+source(paste(workdir,'extractResults.R',sep ='/'),local = FALSE)
 
 setwd(gdxLocation)
 
@@ -47,8 +45,5 @@ for (i in (1:N)){
   
   saveRDS(tmplist,paste(saverdspath,rdsname,sep = ''))
   print('saving complete')
-    
-    #now have a list of lists - one list for each gdx
-    #now need to take each df out of each gdx list and append to masterdf's for each subsector
     
   }
