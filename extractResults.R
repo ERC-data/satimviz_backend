@@ -388,8 +388,11 @@ processGDX <- function(gdxPath,gdxname){
   TCST_PWRCL_T = TCST_PWRCL_T[,-3]
   
   #TCST_PWROTH
-  #mfuelpwr = readWorksheetFromFile(paste(workdir,'ProcessingSets.xlsx',sep =''), sheet ='mfuelpwr')
-  #take process activity from mfuelpwr and multiply with marginal in vcombalem that corresponds with that process
+  #take process activity from mfuelpwr and multiply with marginal in fuelcombal that corresponds with that process
+  
+    #GAMS CODE: 
+    #TCST_PWROTH(T) = SUM((P,C)$MFUELPWR(P,C), VAR_ACT(T,P)*FuelCOMBAL(T,C,RUN));
+  
   TCST_PWROTH = merge(merge(mfuelpwr,VARACT),FuelCOMBAL)
   TCST_PWROTH = TCST_PWROTH %>% mutate(other_pwr_costs = VAR_ACT*fuelCombal)%>%
     group_by(Region,Year)%>%
