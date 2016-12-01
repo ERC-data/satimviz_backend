@@ -25,10 +25,10 @@ saverdspath = 'C:/EMOD/RDSfiles/'
   igdx(GAMS_lib_dir) 
   
   #main working directory for this file/script and colourcoding files etc. 
-  workdir = 'C:/EMOD/Rfiles/'
+  workdir = 'C:/EMOD/satimviz_backend/'
 
 #LOAD FUNCTIONS
-source(paste(workdir,'extractResults_v5.R',sep =''))
+source(paste(workdir,'extractResults.R',sep =''))
 
 print(paste('Running results extraction on: ',gdxfile,sep = ''))
 
