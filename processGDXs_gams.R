@@ -25,7 +25,8 @@ saverdspath = 'C:/EMOD/RDSfiles/'
   igdx(GAMS_lib_dir) 
   
   #main working directory for this file/script and colourcoding files etc. 
-  workdir = 'C:/EMOD/satimviz_backend/'
+  workdir = 'C:/EMOD/satimviz_backend/' # this is also needed for the extractResults.R script
+  
 
 #LOAD FUNCTIONS
 source(paste(workdir,'extractResults.R',sep =''))
