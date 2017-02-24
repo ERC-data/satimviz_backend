@@ -315,7 +315,7 @@ processGDX <- function(gdxPath,gdxname){
   TCST_ELE = merge(TCST_ELE,CST_FIXC,all = TRUE)
   TCST_ELE[is.na(TCST_ELE)] = 0
   TCST_ELE = TCST_ELE[TCST_ELE$Sector == 'Power',]
-  TCST_ELE$AllCosts = TCST_ELE[,7]+TCST_ELE[,8]+TCST_ELE[,9]
+  TCST_ELE = TCST_ELE %>% mutate(AllCosts = CST_ACTC+CST_FIXC+CST_INVC)
   TCST_ELE = TCST_ELE %>%
     group_by(Region,Year)%>%
     summarise(tcst_ele = sum(AllCosts))
