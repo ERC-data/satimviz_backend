@@ -157,117 +157,117 @@ processGDX <- function(gdxPath,gdxname){
   CAP_T = addPRCmap(CAP_T)
   
   #ACTIVITY SHARES
-    tmp = as.data.table(VARACT)
-    vardts = tmp[,.(Vsector_sum = sum(VAR_ACT)),by = .(Year,Sector)] #Sum by sector
-    vardf = merge(VARACT,as.data.frame(vardts))%>% mutate(VAR_ACTshare = VAR_ACT/Vsector_sum)
-    vardf = vardf[,!(names(vardf)%in% c('Vsector_sum'))]
-    
+  tmp = as.data.table(VARACT)
+  vardts = tmp[,.(Vsector_sum = sum(VAR_ACT)),by = .(Year,Sector)] #Sum by sector
+  vardf = merge(VARACT,as.data.frame(vardts))%>% mutate(VAR_ACTshare = VAR_ACT/Vsector_sum)
+  vardf = vardf[,!(names(vardf)%in% c('Vsector_sum'))]
+  
   #ENERGY SHARES
   #fuels = readWorksheetFromFile(paste(workdir,'ProcessingSets.xlsx',sep =''), sheet ='Fuels')
   
   #GET processing sets from csv.
-    tmp = read.csv(paste(workdir,'processingsets.csv',sep =''))
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],1]) 
-    names(tmp2) = tmp[1,1]
+  tmp = read.csv(paste(workdir,'processingsets.csv',sep =''))
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],1]) 
+  names(tmp2) = tmp[1,1]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  passengerModes =tmp2
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],2]) 
+  names(tmp2) = tmp[1,2]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  fuelpcpwr =tmp2
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],3]) 
+  names(tmp2) = tmp[1,3]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  fuelpcpwr_a =tmp2
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],4]) 
+  names(tmp2) = tmp[1,4]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  fuelpcpwr_cb = tmp2 
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],5]) 
+  names(tmp2) = tmp[1,5]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  freightModes = tmp2
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],6]) 
+  names(tmp2) = tmp[1,6]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  mincldual = tmp2 
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],7]) 
+  names(tmp2) = tmp[1,7]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  mincldual_a = tmp2
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],c(8,9)]) 
+  names(tmp2) =c(as.character(tmp[1,8]),as.character(tmp[1,9]))
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  mfuelpwr = tmp2 
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],10]) 
+  names(tmp2) = tmp[1,10]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  fuels = tmp2 
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],11]) 
+  names(tmp2) = tmp[1,11]
     tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    passengerModes =tmp2
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],2]) 
-    names(tmp2) = tmp[1,2]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    fuelpcpwr =tmp2
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],3]) 
-    names(tmp2) = tmp[1,3]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    fuelpcpwr_a =tmp2
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],4]) 
-    names(tmp2) = tmp[1,4]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    fuelpcpwr_cb = tmp2 
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],5]) 
-    names(tmp2) = tmp[1,5]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    freightModes = tmp2
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],6]) 
-    names(tmp2) = tmp[1,6]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    mincldual = tmp2 
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],7]) 
-    names(tmp2) = tmp[1,7]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    mincldual_a = tmp2
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],c(8,9)]) 
-    names(tmp2) =c(as.character(tmp[1,8]),as.character(tmp[1,9]))
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    mfuelpwr = tmp2 
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],10]) 
-    names(tmp2) = tmp[1,10]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    fuels = tmp2 
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],11]) 
-    names(tmp2) = 
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    Fuels2 =tmp2
-    
-    tmp2 = data.frame(tmp[2:dim(tmp)[1],12]) 
-    names(tmp2) = tmp[1,3]
-    tmp2= tmp2[tmp2[,1]!='',,drop = F]
-    minclpwr = tmp2
-    
+  Fuels2 =tmp2
+  
+  tmp2 = data.frame(tmp[2:dim(tmp)[1],12]) 
+  names(tmp2) = tmp[1,3]
+  tmp2= tmp2[tmp2[,1]!='',,drop = F]
+  minclpwr = tmp2
+  
   
   #totalFinal = sum of all fuels over all sectors. one value for each year
-    CINPL1F <- F_IN[F_IN$Sector != ''&F_IN$Commodity_Name != ''&F_IN$Commodity_Name %in% fuels$Fuels,]%>%
+  CINPL1F <- F_IN[F_IN$Sector != ''&F_IN$Commodity_Name != ''&F_IN$Commodity_Name %in% fuels$Fuels,]%>%
     group_by(Region,Year,Sector,Commodity_Name)%>%
     summarise(total_in = sum(F_IN))
-    
-    totalFinal <- CINPL1F %>%
-      group_by(Region,Year)%>%
-      summarise(final = sum(total_in))
-    
-    #coalfinal. Note that this excludes exports (the supply sector)
-    coalFinal = F_IN[F_IN$Commodity_Name == 'Coal'& !(F_IN$Sector %in% c('','Supply')),] %>%
-      group_by(Region,Year)%>%
-      summarise(CoalTotal = sum(F_IN))
-    
-    #coalsharefinal 
-    coalShareFinal = merge(coalFinal,totalFinal)
-    coalShareFinal$CoalShare = coalShareFinal$CoalTotal/coalShareFinal$final
-    coalShareFinal = coalShareFinal[,-c(3,4)]
-    
-    #gasfinal. Note that this excludes exports (the supply sector)
-    gasFinal = F_IN[F_IN$Commodity_Name %in% c('GAS','Gas')&F_IN$Sector !='',] %>%
-      group_by(Region,Year)%>%
-      summarise(GasTotal = sum(F_IN))
-    
-    gasShareFinal = merge(gasFinal,totalFinal)
-    gasShareFinal$GasShare = gasShareFinal$GasTotal/gasShareFinal$final
-    gasShareFinal = gasShareFinal[,-c(3,4)]
-    
-    oilFinal = F_OUT[F_OUT$Commodity_Name == 'Crude Oil'&F_OUT$Sector == 'Supply',]%>% 
-      group_by(Region,Year)%>%
-      summarise(oilTotal = sum(F_OUT))
-    
-    oilShareFinal = merge(totalFinal,oilFinal) %>% mutate(oilshare = oilTotal/final)
-    oilShareFinal = oilShareFinal[,-c(3,4)]
-    
-    #Fossil totals
-    fossilTotals = merge(merge(coalFinal,gasFinal),oilFinal)
-    
-    #Fossil Share 
-    fossilShareFinal = merge(merge(gasShareFinal,coalShareFinal),oilShareFinal)
-    fossilShareFinal = fossilShareFinal%>% mutate(totalFossilShare = GasShare+CoalShare+oilshare)
-    #fossilShareFinal = fossilShareFinal[,-c(3,4)]
   
-    
+  totalFinal <- CINPL1F %>%
+    group_by(Region,Year)%>%
+    summarise(final = sum(total_in))
+  
+  #coalfinal. Note that this excludes exports (the supply sector)
+  coalFinal = F_IN[F_IN$Commodity_Name == 'Coal'& !(F_IN$Sector %in% c('','Supply')),] %>%
+    group_by(Region,Year)%>%
+    summarise(CoalTotal = sum(F_IN))
+  
+  #coalsharefinal 
+  coalShareFinal = merge(coalFinal,totalFinal)
+  coalShareFinal$CoalShare = coalShareFinal$CoalTotal/coalShareFinal$final
+  coalShareFinal = coalShareFinal[,-c(3,4)]
+  
+  #gasfinal. Note that this excludes exports (the supply sector)
+  gasFinal = F_IN[F_IN$Commodity_Name %in% c('GAS','Gas')&F_IN$Sector !='',] %>%
+    group_by(Region,Year)%>%
+    summarise(GasTotal = sum(F_IN))
+  
+  gasShareFinal = merge(gasFinal,totalFinal)
+  gasShareFinal$GasShare = gasShareFinal$GasTotal/gasShareFinal$final
+  gasShareFinal = gasShareFinal[,-c(3,4)]
+  
+  oilFinal = F_OUT[F_OUT$Commodity_Name == 'Crude Oil'&F_OUT$Sector == 'Supply',]%>% 
+    group_by(Region,Year)%>%
+    summarise(oilTotal = sum(F_OUT))
+  
+  oilShareFinal = merge(totalFinal,oilFinal) %>% mutate(oilshare = oilTotal/final)
+  oilShareFinal = oilShareFinal[,-c(3,4)]
+  
+  #Fossil totals
+  fossilTotals = merge(merge(coalFinal,gasFinal),oilFinal)
+  
+  #Fossil Share 
+  fossilShareFinal = merge(merge(gasShareFinal,coalShareFinal),oilShareFinal)
+  fossilShareFinal = fossilShareFinal%>% mutate(totalFossilShare = GasShare+CoalShare+oilshare)
+  #fossilShareFinal = fossilShareFinal[,-c(3,4)]
+  
+  
   #Average coal prices. NEEDS SIM inputs  
   print('Calculating Average coal prices')
   sim_fuelpx = rgdx.param(gdxPath,'SIM_FUELPX')#fuel price (input) for central basin
@@ -390,8 +390,8 @@ processGDX <- function(gdxPath,gdxname){
   #TCST_PWROTH
   #take process activity from mfuelpwr and multiply with marginal in fuelcombal that corresponds with that process
   
-    #GAMS CODE: 
-    #TCST_PWROTH(T) = SUM((P,C)$MFUELPWR(P,C), VAR_ACT(T,P)*FuelCOMBAL(T,C,RUN));
+  #GAMS CODE: 
+  #TCST_PWROTH(T) = SUM((P,C)$MFUELPWR(P,C), VAR_ACT(T,P)*FuelCOMBAL(T,C,RUN));
   
   TCST_PWROTH = merge(merge(mfuelpwr,VARACT),FuelCOMBAL)
   TCST_PWROTH = TCST_PWROTH %>% mutate(other_pwr_costs = VAR_ACT*fuelCombal)%>%
@@ -399,8 +399,8 @@ processGDX <- function(gdxPath,gdxname){
     summarise(other_pwr_costs =sum(other_pwr_costs))
   
   #regulated elctricity price
-    #the gams code: 
-    #ERPRICE(T,RUN) = (TCST_PWRCLT(T)+TCST_PWROTH(T)+TCST_ELE(T))/VARACTPL1(T,'Power',RUN)*3.6/1000
+  #the gams code: 
+  #ERPRICE(T,RUN) = (TCST_PWRCLT(T)+TCST_PWROTH(T)+TCST_ELE(T))/VARACTPL1(T,'Power',RUN)*3.6/1000
   
   varact_pwr = addPRCmap(VARACT)
   varact_pwr = varact_pwr[varact_pwr$Sector == 'Power',]
@@ -467,7 +467,7 @@ processGDX <- function(gdxPath,gdxname){
   names(tonkmAll)[1] = 'TRA_commodity' # for distinguishing later in the pivottables
   #add FIN
   tonkmAll = merge(tonkmAll,F_INa)
-
+  
   #add mapping
   tonkmAll = addPRCmap(tonkmAll)
   tonkmAll = droplevels(tonkmAll)
@@ -479,229 +479,229 @@ processGDX <- function(gdxPath,gdxname){
   #Combine relavant dataframes and lists
   print('Combining dataframes into relavent sections...')
   
-    #POWER SECTOR - total capacity
-    print('...power')
-    pwr_cap = CAP_T[CAP_T$Sector == 'Power',] 
-    pwr_cap$Case = myCase
-    pwr_cap = pwr_cap[,!(names(pwr_cap)%in% c('Subsubsector'))]
-    pwr_cap = droplevels(pwr_cap)
-    
-    #POWER SECTOR - NEW capacity
-    pwr_ncap = addPRCmap(NCAPL)
-    pwr_ncap = pwr_ncap[pwr_ncap$Sector == 'Power',]
-    pwr_ncap$Case = myCase
-    pwr_ncap = droplevels(pwr_ncap)
-    
-    #POWER SECTOR - flows
-    pwr_flows = merge(vardf,F_INa,all.x = TRUE)
-    pwr_flows = pwr_flows[pwr_flows$Sector =='Power',!(names(pwr_flows) %in% c('Timeslice'))] #drop timeslices
-    pwr_flows$Case = myCase
-    pwr_flows[is.na(pwr_flows$F_IN),'F_IN'] = 0
-    pwr_flows = droplevels(pwr_flows)
-    
-    #POWER SECTOR - costs
-    pwr_costs = merge(merge(CST_INVC,CST_ACTC,all.x = T),CST_FIXC,all.x = T)
-    pwr_costs = pwr_costs[pwr_costs$Sector == 'Power',]
-    pwr_costs$Case = myCase
-    pwr_costs[is.na(pwr_costs)]= 0
-    pwr_costs = droplevels(pwr_costs)
-    
-    tmp = merge(CAP_T,NCAPL,all = TRUE)#add capacity
-    tmp = merge(tmp,CST_INVC,all.x = TRUE)#add investments
-    tmp = merge(tmp,ERPRICE)#add elec price
-    tmp = addPRCmap(tmp)#add mapping
-    tmp = tmp[tmp$Sector == 'Power',]
-    tmp$Case = myCase
-    pwrdf = droplevels(tmp)
-    
-    #TRANSPORT
-    print('...transport')
-    tmp = merge(tonkmAll,passengerkmAll,all = TRUE)
-    tmp$Case = myCase
-    tmp = tmp[!(names(tmp) == 'Sector'),] #drop sector column - dont need
-    tradf = droplevels(tmp)
-    
-    tra_flows = merge(vardf[vardf$Sector =='Transport',],F_INa)
-    tra_flows = merge(tra_flows,passengerkmAll[,names(passengerkmAll)%in%c('Year','Process','bpkm_fout')],all.x = T)
-    tra_flows =merge(tra_flows,tonkmAll[,names(tonkmAll)%in% c('Year','Process','btkm_fout')],all.x = T)
-    tra_flows[is.na(tra_flows)] = 0
-    tra_flows = tra_flows[,!(names(tra_flows)%in% c('Sector','Timeslice'))]
-    tra_flows$Case = myCase
-    tra_flows = droplevels(tra_flows)
-    
-    tra_costs = CST_INVC[CST_INVC$Sector =='Transport',]
-    tra_costs = tra_costs[,!(names(tra_costs)%in% c('Sector','Timeslice'))]
-    tra_costs$Case = myCase
-    tra_costs = droplevels(tra_costs)
-    
-    tra_cap = CAP_T[CAP_T$Sector =='Transport',]
-    tra_cap$Case = myCase
-    tra_cap = tra_cap[,!(names(tra_cap)%in% c('Sector'))]
-    tra_cap = droplevels(tra_cap)
-    
-    NCAPL = addPRCmap(NCAPL)
-    tra_ncap = NCAPL[NCAPL$Sector =='Transport',]
-    tra_ncap$Case = myCase
-    tra_ncap = tra_ncap[,!(names(tra_ncap)%in% c('Sector'))]
-    tra_ncap = droplevels(tra_ncap)
-    
-    #REFINERIES
-    print('...refineries')
-    refsfout = F_OUTa[F_OUTa$Sector == 'Refineries'&F_OUTa$Commodity_Name != '',]
-    refsin = F_INa[F_INa$Sector == 'Refineries'&F_INa$Commodity_Name != '',]
-    refsvaract =VARACT[VARACT$Sector == 'Refineries',]
-    refs_flows = merge(refsvaract,merge(refsin,refsfout,all = TRUE),all = TRUE)
-    refs_flows$Case= myCase
-    refs_flows[duplicated(paste(paste(refs_flows$VAR_ACT,refs_flows$Process),refs_flows$Year)),'VAR_ACT'] = 0# we get duplicate var_act for each F_IN commodity, make the duplicates 0 (except one of them)
-    refs_flows = droplevels(refs_flows)
-    
-    refs_costs = merge(CST_INVC,merge(CST_ACTC,CST_FIXC,all.x = T),all.x = T)
-    refs_costs = refs_costs[refs_costs$Sector =='Refineries',]
-    refs_costs = refs_costs[,!(names(refs_costs)%in% c('Sector','Timeslice'))]
-    refs_costs[is.na(refs_costs)] = 0
-    refs_costs = refs_costs %>% mutate(Allcosts = CST_INVC+CST_ACTC+CST_FIXC)
-    refs_costs$Case = myCase
-    refs_costs = droplevels(refs_costs)
-    
-    refs_cap = CAP_T[CAP_T$Sector =='Refineries',]
-    refs_cap$Case = myCase
-    refs_cap = refs_cap[,!(names(refs_cap)%in% c('Sector'))]
-    refs_cap = droplevels(refs_cap)
-    
-    NCAPL = addPRCmap(NCAPL)
-    refs_ncap = NCAPL[NCAPL$Sector =='Refineries',]
-    refs_ncap$Case = myCase
-    refs_ncap = refs_ncap[,!(names(refs_ncap)%in% c('Sector'))]
-    refs_ncap = droplevels(refs_ncap)
-    
-    #COAL PRICES
-    tmp = merge(avgcoalprice,avgcoalpriceA,all = TRUE)
-    tmp = merge(tmp,avgcoalpriceCB,all = TRUE)
-    
-    tmp$Case = myCase
-    coalPrices = droplevels(tmp)
-    
-    #INDUSTRY
-    print('...industry')
-    ind_flows = merge(vardf[vardf$Sector == 'Industry',],F_INa[F_INa$Sector =='Industry',])
-    ind_flows = ind_flows[,!(names(ind_flows)%in% c('Sector','Timeslice'))]
-    ind_flows$Case = myCase
-    ind_flows = droplevels(ind_flows)
-    
-    ind_costs = merge(merge(CST_INVC,CST_FIXC,all.x = TRUE),CST_ACTC,all.x = TRUE)
-    ind_costs = ind_costs[ind_costs$Sector =="Industry",!(names(ind_costs) %in% c('Sector','Timeslice'))]
-    ind_costs[is.na(ind_costs)] = 0
-    ind_costs = ind_costs %>% mutate(Allcosts = CST_INVC+CST_ACTC+CST_FIXC)
-    ind_costs$Case = myCase
-    ind_costs = droplevels(ind_costs)
-    
-    inddf = merge(VARACT[VARACT$Sector == 'Industry',],F_INa[F_INa$Sector == 'Industry',])
-    inddf$Case = myCase
-    inddf = inddf[,!(names(inddf) %in% c('Sector','Timeslice'))] #drop sector column - dont need
-    inddf = droplevels(inddf)
-    
-    #RESIDENTIAL
-    print('...residential')
-    resdf = merge(VARACT[VARACT$Sector == 'Residential',],F_INa[F_INa$Sector == 'Residential',])
-    resdf$Case = myCase
-    resdf = resdf[,!(names(resdf) %in% c('Sector','Timeslice'))] #drop sector column - dont need
-    resdf = droplevels(resdf)
-    
-    res_flows = merge(F_INa,vardf)
-    res_flows = res_flows[res_flows$Sector =='Residential',!(names(res_flows) %in%c('Sector','Timeslice'))] #drop sector and timeslices
-    res_flows$Case = myCase
-    res_flows = droplevels(res_flows)
-    
-    res_cost = merge(CST_INVC,CST_FIXC)
-    res_cost = res_cost[res_cost$Sector =='Residential',]
-    res_cost = res_cost[,-4] #drop sector column
-    res_cost = res_cost %>% mutate(Allcosts = CST_INVC+CST_FIXC)
-    res_cost = res_cost[,-c(6,7)]
-    res_cost$Case = myCase
-    res_cost = droplevels(res_cost)
-    
-    #COMMERCIAL
-    print('...commercial')
-    comdf = merge(VARACT[VARACT$Sector == 'Commerce',],F_INa[F_INa$Sector == 'Commerce',])
-    comdf$Case = myCase
-    comdf = comdf[,!(names(comdf) %in% c('Sector','Timeslice'))]#drop sector column - dont need
-    comdf = droplevels(comdf)
-    
-    com_flows = merge(vardf[vardf$Sector == 'Commerce',],F_INa[F_INa$Sector == 'Commerce',])
-    com_flows = com_flows[,!(names(com_flows) %in%c('Sector','Timeslice'))]
-    com_flows$Case = myCase
-    com_flows = droplevels(com_flows)
-    
-    com_costs = merge(merge(CST_INVC[CST_INVC$Sector =='Commerce',],CST_FIXC,all.x = TRUE),CST_ACTC,all.x = TRUE)
-    com_costs = com_costs[,!(names(com_costs) %in%c('Sector','Timeslice'))]
-    com_costs[is.na(com_costs)] = 0
-    com_costs = com_costs %>% mutate(Allcosts = CST_INVC+CST_FIXC+CST_ACTC)
-    com_costs$Case = myCase
-    com_costs = droplevels(com_costs)
-    
-    #CAP
-    #VARACT
-    VARACT$Case = myCase
-    VARACT = droplevels(addPRCmap(VARACT))
-    
-    # GET SECTOR EMISSIONS BY FULL SECTOR DETAILS
-      
-      # get emissions factors for each process/commodity
-      
-      #things we want to include/exclude:
-      myEmisTypes = c('CH4S','CMOX','CO2S','N2OS','NMVS','NOXS','SOXS','CO2EQS','CH4S')
-      myEmisTypes_code = paste(myEmisTypes,collapse = '|')
-      mycols = c('Sector','Subsector','Subsubsector','Commodity_Name')
-      myexclusions = paste('^',paste(c('U','PEX','X'),collapse = '|'),sep = '') #exclude refineries, transmissions, and exports
-      
-      #Alternate attempt (simpler)
-      emissionsFactors = read.csv(paste(workdir,'emissionsFactors.csv',sep ='/'))#get emissions factors
-      
-      
-      #get total flow in to each sector+subsector for each commodity
-      
-      Emissions_flows = F_INa[!(grepl('ELC',F_INa$Process))&!(grepl(myexclusions,F_INa$Process)),]# get all flow in's except electricity and exports
-      Emissions_flows = merge(Emissions_flows,emissionsFactors)#add emissions factors column from csv
-      Emissions_flows = Emissions_flows %>% mutate(GHG_kt = ktPJ*F_IN)#calculate ghg kt 
-      Emissions_flows = Emissions_flows %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Commodity_Name,
-                                                     Emissions) %>% summarise(GHG_kt = sum(GHG_kt))#sum over timeslices
-      names(Emissions_flows)[names(Emissions_flows) =='Commodity_Name'] = 'Emissions_source'
-      Emissions_flows = ungroup(Emissions_flows)
-      Emissions_flows = droplevels(Emissions_flows)
-      Emissions_flows$Emissions = sapply(Emissions_flows$Emissions,addEmisNames) #add emissions names, some of them are xyzCH4 etc.
-      
-      #some have processt emissions (catch these on the flow_out) - no need to convert from PJ 
-      Emissions_flows_prc = F_OUT[(grepl(myEmisTypes_code,F_OUT$Commodity))&!(grepl('^X',F_OUT$Process)),!(names(F_OUT) %in% mycols)] #get all not X processes that DO have myEmisTypes
-      names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'F_OUT'] = 'GHG_kt' #change name of FOUT to kt
-      names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'Commodity'] = 'Emissions' # change name of commodity to Emission
-      Emissions_flows_prc = addPRCmap(Emissions_flows_prc)
-      Emissions_flows_prc = Emissions_flows_prc %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,
-                                                             Emissions)%>%summarise(GHG_kt = sum(GHG_kt))# sum over timeslices
-      Emissions_flows_prc$Emissions_source = 'Process'
-      Emissions_flows_prc$Emissions = paste(Emissions_flows_prc$Emissions,'_prc',sep = '')#add a suffix to denote process emissions
-      Emissions_flows_prc = ungroup(Emissions_flows_prc)
-      Emissions_flows_prc$Emissions= sapply(Emissions_flows_prc$Emissions,addEmisNames)
-      Emissions_flows_prc = droplevels(Emissions_flows_prc)
-      
-      #COmbine the Emissions and process emissions together
-      
-      All_emissions = rbind(Emissions_flows,Emissions_flows_prc)
-      All_emissions$Case = myCase
-      
-    #subselect sectors:
-      com_emis = All_emissions[All_emissions$Sector == 'Commerce',]
-      refs_emis = All_emissions[All_emissions$Sector == 'Refineries',]
-      pwr_emis = All_emissions[All_emissions$Sector == 'Power',]
-      res_emis = All_emissions[All_emissions$Sector == 'Residential',]
-      tra_emis= All_emissions[All_emissions$Sector == 'Transport',]
-      ind_emis = All_emissions[All_emissions$Sector == 'Industry',]
-      sup_emis = All_emissions[All_emissions$Sector == 'Supply',]
-      
+  #POWER SECTOR - total capacity
+  print('...power')
+  pwr_cap = CAP_T[CAP_T$Sector == 'Power',] 
+  pwr_cap$Case = myCase
+  pwr_cap = pwr_cap[,!(names(pwr_cap)%in% c('Subsubsector'))]
+  pwr_cap = droplevels(pwr_cap)
   
-  #Assembling energy balance  STILL NEEDS FIXING - things are not balancing
+  #POWER SECTOR - NEW capacity
+  pwr_ncap = addPRCmap(NCAPL)
+  pwr_ncap = pwr_ncap[pwr_ncap$Sector == 'Power',]
+  pwr_ncap$Case = myCase
+  pwr_ncap = droplevels(pwr_ncap)
+  
+  #POWER SECTOR - flows
+  pwr_flows = merge(vardf,F_INa,all.x = TRUE)
+  pwr_flows = pwr_flows[pwr_flows$Sector =='Power',!(names(pwr_flows) %in% c('Timeslice'))] #drop timeslices
+  pwr_flows$Case = myCase
+  pwr_flows[is.na(pwr_flows$F_IN),'F_IN'] = 0
+  pwr_flows = droplevels(pwr_flows)
+  
+  #POWER SECTOR - costs
+  pwr_costs = merge(merge(CST_INVC,CST_ACTC,all.x = T),CST_FIXC,all.x = T)
+  pwr_costs = pwr_costs[pwr_costs$Sector == 'Power',]
+  pwr_costs$Case = myCase
+  pwr_costs[is.na(pwr_costs)]= 0
+  pwr_costs = droplevels(pwr_costs)
+  
+  tmp = merge(CAP_T,NCAPL,all = TRUE)#add capacity
+  tmp = merge(tmp,CST_INVC,all.x = TRUE)#add investments
+  tmp = merge(tmp,ERPRICE)#add elec price
+  tmp = addPRCmap(tmp)#add mapping
+  tmp = tmp[tmp$Sector == 'Power',]
+  tmp$Case = myCase
+  pwrdf = droplevels(tmp)
+  
+  #TRANSPORT
+  print('...transport')
+  tmp = merge(tonkmAll,passengerkmAll,all = TRUE)
+  tmp$Case = myCase
+  tmp = tmp[!(names(tmp) == 'Sector'),] #drop sector column - dont need
+  tradf = droplevels(tmp)
+  
+  tra_flows = merge(vardf[vardf$Sector =='Transport',],F_INa)
+  tra_flows = merge(tra_flows,passengerkmAll[,names(passengerkmAll)%in%c('Year','Process','bpkm_fout')],all.x = T)
+  tra_flows =merge(tra_flows,tonkmAll[,names(tonkmAll)%in% c('Year','Process','btkm_fout')],all.x = T)
+  tra_flows[is.na(tra_flows)] = 0
+  tra_flows = tra_flows[,!(names(tra_flows)%in% c('Sector','Timeslice'))]
+  tra_flows$Case = myCase
+  tra_flows = droplevels(tra_flows)
+  
+  tra_costs = CST_INVC[CST_INVC$Sector =='Transport',]
+  tra_costs = tra_costs[,!(names(tra_costs)%in% c('Sector','Timeslice'))]
+  tra_costs$Case = myCase
+  tra_costs = droplevels(tra_costs)
+  
+  tra_cap = CAP_T[CAP_T$Sector =='Transport',]
+  tra_cap$Case = myCase
+  tra_cap = tra_cap[,!(names(tra_cap)%in% c('Sector'))]
+  tra_cap = droplevels(tra_cap)
+  
+  NCAPL = addPRCmap(NCAPL)
+  tra_ncap = NCAPL[NCAPL$Sector =='Transport',]
+  tra_ncap$Case = myCase
+  tra_ncap = tra_ncap[,!(names(tra_ncap)%in% c('Sector'))]
+  tra_ncap = droplevels(tra_ncap)
+  
+  #REFINERIES
+  print('...refineries')
+  refsfout = F_OUTa[F_OUTa$Sector == 'Refineries'&F_OUTa$Commodity_Name != '',]
+  refsin = F_INa[F_INa$Sector == 'Refineries'&F_INa$Commodity_Name != '',]
+  refsvaract =VARACT[VARACT$Sector == 'Refineries',]
+  refs_flows = merge(refsvaract,merge(refsin,refsfout,all = TRUE),all = TRUE)
+  refs_flows$Case= myCase
+  refs_flows[duplicated(paste(paste(refs_flows$VAR_ACT,refs_flows$Process),refs_flows$Year)),'VAR_ACT'] = 0# we get duplicate var_act for each F_IN commodity, make the duplicates 0 (except one of them)
+  refs_flows = droplevels(refs_flows)
+  
+  refs_costs = merge(CST_INVC,merge(CST_ACTC,CST_FIXC,all.x = T),all.x = T)
+  refs_costs = refs_costs[refs_costs$Sector =='Refineries',]
+  refs_costs = refs_costs[,!(names(refs_costs)%in% c('Sector','Timeslice'))]
+  refs_costs[is.na(refs_costs)] = 0
+  refs_costs = refs_costs %>% mutate(Allcosts = CST_INVC+CST_ACTC+CST_FIXC)
+  refs_costs$Case = myCase
+  refs_costs = droplevels(refs_costs)
+  
+  refs_cap = CAP_T[CAP_T$Sector =='Refineries',]
+  refs_cap$Case = myCase
+  refs_cap = refs_cap[,!(names(refs_cap)%in% c('Sector'))]
+  refs_cap = droplevels(refs_cap)
+  
+  NCAPL = addPRCmap(NCAPL)
+  refs_ncap = NCAPL[NCAPL$Sector =='Refineries',]
+  refs_ncap$Case = myCase
+  refs_ncap = refs_ncap[,!(names(refs_ncap)%in% c('Sector'))]
+  refs_ncap = droplevels(refs_ncap)
+  
+  #COAL PRICES
+  tmp = merge(avgcoalprice,avgcoalpriceA,all = TRUE)
+  tmp = merge(tmp,avgcoalpriceCB,all = TRUE)
+  
+  tmp$Case = myCase
+  coalPrices = droplevels(tmp)
+  
+  #INDUSTRY
+  print('...industry')
+  ind_flows = merge(vardf[vardf$Sector == 'Industry',],F_INa[F_INa$Sector =='Industry',])
+  ind_flows = ind_flows[,!(names(ind_flows)%in% c('Sector','Timeslice'))]
+  ind_flows$Case = myCase
+  ind_flows = droplevels(ind_flows)
+  
+  ind_costs = merge(merge(CST_INVC,CST_FIXC,all.x = TRUE),CST_ACTC,all.x = TRUE)
+  ind_costs = ind_costs[ind_costs$Sector =="Industry",!(names(ind_costs) %in% c('Sector','Timeslice'))]
+  ind_costs[is.na(ind_costs)] = 0
+  ind_costs = ind_costs %>% mutate(Allcosts = CST_INVC+CST_ACTC+CST_FIXC)
+  ind_costs$Case = myCase
+  ind_costs = droplevels(ind_costs)
+  
+  inddf = merge(VARACT[VARACT$Sector == 'Industry',],F_INa[F_INa$Sector == 'Industry',])
+  inddf$Case = myCase
+  inddf = inddf[,!(names(inddf) %in% c('Sector','Timeslice'))] #drop sector column - dont need
+  inddf = droplevels(inddf)
+  
+  #RESIDENTIAL
+  print('...residential')
+  resdf = merge(VARACT[VARACT$Sector == 'Residential',],F_INa[F_INa$Sector == 'Residential',])
+  resdf$Case = myCase
+  resdf = resdf[,!(names(resdf) %in% c('Sector','Timeslice'))] #drop sector column - dont need
+  resdf = droplevels(resdf)
+  
+  res_flows = merge(F_INa,vardf)
+  res_flows = res_flows[res_flows$Sector =='Residential',!(names(res_flows) %in%c('Sector','Timeslice'))] #drop sector and timeslices
+  res_flows$Case = myCase
+  res_flows = droplevels(res_flows)
+  
+  res_cost = merge(CST_INVC,CST_FIXC)
+  res_cost = res_cost[res_cost$Sector =='Residential',]
+  res_cost = res_cost[,-4] #drop sector column
+  res_cost = res_cost %>% mutate(Allcosts = CST_INVC+CST_FIXC)
+  res_cost = res_cost[,-c(6,7)]
+  res_cost$Case = myCase
+  res_cost = droplevels(res_cost)
+  
+  #COMMERCIAL
+  print('...commercial')
+  comdf = merge(VARACT[VARACT$Sector == 'Commerce',],F_INa[F_INa$Sector == 'Commerce',])
+  comdf$Case = myCase
+  comdf = comdf[,!(names(comdf) %in% c('Sector','Timeslice'))]#drop sector column - dont need
+  comdf = droplevels(comdf)
+  
+  com_flows = merge(vardf[vardf$Sector == 'Commerce',],F_INa[F_INa$Sector == 'Commerce',])
+  com_flows = com_flows[,!(names(com_flows) %in%c('Sector','Timeslice'))]
+  com_flows$Case = myCase
+  com_flows = droplevels(com_flows)
+  
+  com_costs = merge(merge(CST_INVC[CST_INVC$Sector =='Commerce',],CST_FIXC,all.x = TRUE),CST_ACTC,all.x = TRUE)
+  com_costs = com_costs[,!(names(com_costs) %in%c('Sector','Timeslice'))]
+  com_costs[is.na(com_costs)] = 0
+  com_costs = com_costs %>% mutate(Allcosts = CST_INVC+CST_FIXC+CST_ACTC)
+  com_costs$Case = myCase
+  com_costs = droplevels(com_costs)
+  
+  #CAP
+  #VARACT
+  VARACT$Case = myCase
+  VARACT = droplevels(addPRCmap(VARACT))
+  
+  # GET SECTOR EMISSIONS BY FULL SECTOR DETAILS
+  
+  # get emissions factors for each process/commodity
+  
+  #things we want to include/exclude:
+  myEmisTypes = c('CH4S','CMOX','CO2S','N2OS','NMVS','NOXS','SOXS','CO2EQS','CH4S')
+  myEmisTypes_code = paste(myEmisTypes,collapse = '|')
+  mycols = c('Sector','Subsector','Subsubsector','Commodity_Name')
+  myexclusions = paste('^',paste(c('U','PEX','X'),collapse = '|'),sep = '') #exclude refineries, transmissions, and exports
+  
+  #Alternate attempt (simpler)
+  emissionsFactors = read.csv(paste(workdir,'emissionsFactors.csv',sep ='/'))#get emissions factors
+  
+  
+  #get total flow in to each sector+subsector for each commodity
+  
+  Emissions_flows = F_INa[!(grepl('ELC',F_INa$Process))&!(grepl(myexclusions,F_INa$Process)),]# get all flow in's except electricity and exports
+  Emissions_flows = merge(Emissions_flows,emissionsFactors)#add emissions factors column from csv
+  Emissions_flows = Emissions_flows %>% mutate(GHG_kt = ktPJ*F_IN)#calculate ghg kt 
+  Emissions_flows = Emissions_flows %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Commodity_Name,
+                                                 Emissions) %>% summarise(GHG_kt = sum(GHG_kt))#sum over timeslices
+  names(Emissions_flows)[names(Emissions_flows) =='Commodity_Name'] = 'Emissions_source'
+  Emissions_flows = ungroup(Emissions_flows)
+  Emissions_flows = droplevels(Emissions_flows)
+  Emissions_flows$Emissions = sapply(Emissions_flows$Emissions,addEmisNames) #add emissions names, some of them are xyzCH4 etc.
+  
+  #some have processt emissions (catch these on the flow_out) - no need to convert from PJ 
+  Emissions_flows_prc = F_OUT[(grepl(myEmisTypes_code,F_OUT$Commodity))&!(grepl('^X',F_OUT$Process)),!(names(F_OUT) %in% mycols)] #get all not X processes that DO have myEmisTypes
+  names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'F_OUT'] = 'GHG_kt' #change name of FOUT to kt
+  names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'Commodity'] = 'Emissions' # change name of commodity to Emission
+  Emissions_flows_prc = addPRCmap(Emissions_flows_prc)
+  Emissions_flows_prc = Emissions_flows_prc %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,
+                                                         Emissions)%>%summarise(GHG_kt = sum(GHG_kt))# sum over timeslices
+  Emissions_flows_prc$Emissions_source = 'Process'
+  Emissions_flows_prc$Emissions = paste(Emissions_flows_prc$Emissions,'_prc',sep = '')#add a suffix to denote process emissions
+  Emissions_flows_prc = ungroup(Emissions_flows_prc)
+  Emissions_flows_prc$Emissions= sapply(Emissions_flows_prc$Emissions,addEmisNames)
+  Emissions_flows_prc = droplevels(Emissions_flows_prc)
+  
+  #COmbine the Emissions and process emissions together
+  
+  All_emissions = rbind(Emissions_flows,Emissions_flows_prc)
+  All_emissions$Case = myCase
+  
+  #subselect sectors:
+  com_emis = All_emissions[All_emissions$Sector == 'Commerce',]
+  refs_emis = All_emissions[All_emissions$Sector == 'Refineries',]
+  pwr_emis = All_emissions[All_emissions$Sector == 'Power',]
+  res_emis = All_emissions[All_emissions$Sector == 'Residential',]
+  tra_emis= All_emissions[All_emissions$Sector == 'Transport',]
+  ind_emis = All_emissions[All_emissions$Sector == 'Industry',]
+  sup_emis = All_emissions[All_emissions$Sector == 'Supply',]
+  
+  
+  #Assembling energy balance
   myPrc_exclude = paste(c('^X','ETRANS','ZZ','EPP','EPD','UXL'),collapse = '|') #transmissions
   tmp = append(myEmisTypes,c('WAT','PWRENV'))
-  myCom_exclude = paste(tmp,collapse = '|') #remove emissions from the selection
+  myCom_exclude = paste(tmp,collapse = '|') #remove emissions and water from the selection
   
   #exclude transmissions techs, ETRANS,ZZ, and exclude all emissions and other non fuel commodities
   x = !(grepl(myPrc_exclude,F_INa$Process))&!(F_INa$Commodity_Name %in% fuels)#&(F_INa$Sector != '')
