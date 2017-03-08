@@ -79,6 +79,9 @@ processGDX <- function(gdxPath,gdxname){
   comsMargs= comsMargs[comsMargs$Timeslice =='ANNUAL',]
   comsMargs= comsMargs[,-4] #remove 'annual' timeslice column
   
+  #add commodity names KEEPING ALL commodities
+  comsMargs = merge(comsMargs,mapCOM,all.x = T)
+  
   #add names and remove redundant columns
   
   names(CAPL) = c('Region','Year','Process','CAPL')
