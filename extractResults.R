@@ -74,11 +74,10 @@ processGDX <- function(gdxPath,gdxname){
   LEVCOST = rgdx.param(gdxPath,'PAR_NCAPR')
   LEVCOST= LEVCOST[,-4] #Drop the 'LEVCOST' descriptor column
   
-  FuelCOMBAL = rgdx.param(gdxPath,'PAR_COMBALEM')
-  names(FuelCOMBAL) =c('Region','Year','Commodity','Timeslice','fuelCombal')
-  FuelCOMBAL= FuelCOMBAL[FuelCOMBAL$Timeslice =='ANNUAL',]
-  FuelCOMBAL= FuelCOMBAL[FuelCOMBAL$Timeslice =='ANNUAL',]
-  FuelCOMBAL= FuelCOMBAL[,-4]
+  comsMargs = rgdx.param(gdxPath,'PAR_COMBALEM')
+  names(comsMargs) =c('Region','Year','Commodity','Timeslice','comsMargs')
+  comsMargs= comsMargs[comsMargs$Timeslice =='ANNUAL',]
+  comsMargs= comsMargs[,-4] #remove 'annual' timeslice column
   
   #add names and remove redundant columns
   
@@ -388,13 +387,13 @@ processGDX <- function(gdxPath,gdxname){
   TCST_PWRCL_T = TCST_PWRCL_T[,-3]
   
   #TCST_PWROTH
-  #take process activity from mfuelpwr and multiply with marginal in fuelcombal that corresponds with that process
+  #take process activity from mfuelpwr and multiply with marginal in comsMargs that corresponds with that process
   
   #GAMS CODE: 
-  #TCST_PWROTH(T) = SUM((P,C)$MFUELPWR(P,C), VAR_ACT(T,P)*FuelCOMBAL(T,C,RUN));
+  #TCST_PWROTH(T) = SUM((P,C)$MFUELPWR(P,C), VAR_ACT(T,P)*comsMargs(T,C,RUN));
   
-  TCST_PWROTH = merge(merge(mfuelpwr,VARACT),FuelCOMBAL)
-  TCST_PWROTH = TCST_PWROTH %>% mutate(other_pwr_costs = VAR_ACT*fuelCombal)%>%
+  TCST_PWROTH = merge(merge(mfuelpwr,VARACT),comsMargs)
+  TCST_PWROTH = TCST_PWROTH %>% mutate(other_pwr_costs = VAR_ACT*comsMargs)%>%
     group_by(Region,Year)%>%
     summarise(other_pwr_costs =sum(other_pwr_costs))
   
@@ -732,7 +731,7 @@ processGDX <- function(gdxPath,gdxname){
   #Combine into list:
   masterlist = list(pwr_indicators,pwr_cap,pwr_ncap,pwr_flows,pwr_costs,tradf,coalPrices,VARACT,inddf,ind_flows,ind_costs,
                     resdf,res_flows,res_cost,comdf,com_costs,com_flows,tra_flows,tra_costs,tra_cap,tra_ncap,
-                    refs_flows,refs_costs,refs_cap,refs_ncap,pwr_emis,ind_emis,res_emis,com_emis,tra_emis,sup_emis,refs_emis,All_emissions,EB)
+                    refs_flows,refs_costs,refs_cap,refs_ncap,pwr_emis,ind_emis,res_emis,com_emis,tra_emis,sup_emis,refs_emis,All_emissions,EB,comsMargs)
   
   print('....DONE PROCESSING RESULTS!....')
   return(masterlist)
