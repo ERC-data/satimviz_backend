@@ -75,7 +75,7 @@ processGDX <- function(gdxPath,gdxname){
   LEVCOST= LEVCOST[,-4] #Drop the 'LEVCOST' descriptor column
   
   comsMargs = rgdx.param(gdxPath,'PAR_COMBALEM')
-  names(comsMargs) =c('Region','Year','Commodity','Timeslice','comsMargs')
+  names(comsMargs) =c('Region','Year','Commodity','Timeslice','comsMargs_value')
   comsMargs= comsMargs[comsMargs$Timeslice =='ANNUAL',]
   comsMargs= comsMargs[,-4] #remove 'annual' timeslice column
   
@@ -393,7 +393,7 @@ processGDX <- function(gdxPath,gdxname){
   #TCST_PWROTH(T) = SUM((P,C)$MFUELPWR(P,C), VAR_ACT(T,P)*comsMargs(T,C,RUN));
   
   TCST_PWROTH = merge(merge(mfuelpwr,VARACT),comsMargs)
-  TCST_PWROTH = TCST_PWROTH %>% mutate(other_pwr_costs = VAR_ACT*comsMargs)%>%
+  TCST_PWROTH = TCST_PWROTH %>% mutate(other_pwr_costs = VAR_ACT*comsMargs_value)%>%
     group_by(Region,Year)%>%
     summarise(other_pwr_costs =sum(other_pwr_costs))
   
