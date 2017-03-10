@@ -81,6 +81,7 @@ processGDX <- function(gdxPath,gdxname){
   
   #add commodity names KEEPING ALL commodities
   comsMargs = merge(comsMargs,mapCOM,all.x = T)
+  comsMargs$Case = myCase
   
   #add names and remove redundant columns
   
