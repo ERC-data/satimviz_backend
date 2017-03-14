@@ -447,7 +447,7 @@ processGDX <- function(gdxPath,gdxname){
   #add F_IN 
   passengerkmAll = merge(passengerkmAll,F_INa,by.x = c('Process','Year','Region','Subsector','Subsubsector'),by.y = c('Process','Year','Region','Subsector','Subsubsector'))
   passengerkmAll = passengerkmAll[,!(names(passengerkmAll) %in% c('Sector','Timeslice'))]#drop redundant columns
-  
+
   #add mapping
   passengerkmAll = addPRCmap(passengerkmAll)
   passengerkmAll = droplevels(passengerkmAll)
