@@ -18,7 +18,8 @@ addCOMmap <- function(db){
   #and merges it with db
   print('Adding mapping for commodities')
   
-  db = merge(db,mapCOM,all = FALSE)
+  db = merge(db,mapCOM,all.x = T)
+  db[is.na(db)] = ''# make all commodities without a name blank
   return(db)
 }
 
@@ -615,7 +616,7 @@ processGDX <- function(gdxPath,gdxname){
   res_flows$Case = myCase
   res_flows = droplevels(res_flows)
   
-  res_cost = merge(CST_INVC,CST_FIXC)
+  res_cost = CST_INVC
   res_cost = res_cost[res_cost$Sector =='Residential',]
   res_cost = res_cost[,-4] #drop sector column
   res_cost = res_cost %>% mutate(Allcosts = CST_INVC+CST_FIXC)
