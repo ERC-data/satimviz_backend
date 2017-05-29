@@ -1,5 +1,7 @@
 Commodity,Commodity_Name
 TRAEVP,Electricity
+TRAEVF,Electricity
+TRABGS,BlendedGasoline
 GIV,CPTGas
 GAS,GAS
 ELC,Electricity
