@@ -47,7 +47,7 @@ addEmisNames = function(comin){
 processGDX <- function(gdxPath,gdxname){
   
   print(paste('Reading in parameters from GDX'))
-  
+  print('this file')
   #Read in Parameters-------------------------------
   
   #Case name
@@ -618,9 +618,7 @@ processGDX <- function(gdxPath,gdxname){
   
   res_cost = CST_INVC
   res_cost = res_cost[res_cost$Sector =='Residential',]
-  res_cost = res_cost[,-4] #drop sector column
-  res_cost = res_cost %>% mutate(Allcosts = CST_INVC+CST_FIXC)
-  res_cost = res_cost[,-c(6,7)]
+  res_cost = res_cost[,!(names(res_cost)%in% c('Sector'))] #drop sector column
   res_cost$Case = myCase
   res_cost = droplevels(res_cost)
   
