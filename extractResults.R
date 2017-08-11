@@ -594,10 +594,27 @@ processGDX <- function(gdxPath,gdxname){
   
   ind_costs = merge(merge(CST_INVC,CST_FIXC,all.x = TRUE),CST_ACTC,all.x = TRUE)
   ind_costs = ind_costs[ind_costs$Sector =="Industry",!(names(ind_costs) %in% c('Sector','Timeslice'))]
-  ind_costs[is.na(ind_costs)] = 0
-  ind_costs = ind_costs %>% mutate(Allcosts = CST_INVC+CST_ACTC+CST_FIXC)
-  ind_costs$Case = myCase
-  ind_costs = droplevels(ind_costs)
+  if(dim(ind_costs)[1] == 0){
+    print('no industry costs')
+    #there are no costs in industry
+    #avoid the crash from an empty dataframe
+    #by making an industry dataframe that is all zeros. 
+    
+    ind_costs = mapPRC[mapPRC$Sector =='Industry',]
+    ind_costs$Allcosts = 0
+    ind_costs$CST_ACTC = 0
+    ind_costs$CST_INVC = 0
+    ind_costs$CST_FIXC = 0
+    
+  }else{
+    #there are costs in industry. 
+    #so make costs dataframe
+    ind_costs[is.na(ind_costs)] = 0
+    ind_costs = ind_costs %>% mutate(Allcosts = CST_INVC+CST_ACTC+CST_FIXC)
+    ind_costs$Case = myCase
+    ind_costs = droplevels(ind_costs)
+    
+  }
   
   inddf = merge(VARACT[VARACT$Sector == 'Industry',],F_INa[F_INa$Sector == 'Industry',])
   inddf$Case = myCase
