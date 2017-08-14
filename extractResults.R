@@ -695,9 +695,17 @@ processGDX <- function(gdxPath,gdxname){
   Emissions_flows_prc = F_OUT[(grepl(myEmisTypes_code,F_OUT$Commodity))&!(grepl('^X',F_OUT$Process)),!(names(F_OUT) %in% mycols)] #get all not X processes that DO have myEmisTypes
   names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'F_OUT'] = 'emissions_kt' #change name of FOUT to kt
   names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'Commodity'] = 'Emissions' # change name of commodity to Emission
+  
+  tmp = emissionsFactors[,-1] # to add GWP for process emissions
+  tmp$Emissions = paste(tmp$Emissions,'F',sep ='')
+  
+  Emissions_flows_prc = merge(Emissions_flows_prc,tmp)
   Emissions_flows_prc = addPRCmap(Emissions_flows_prc)
-  Emissions_flows_prc = Emissions_flows_prc %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,
-                                                         Emissions)%>%summarise(emissions_kt = sum(emissions_kt))# sum over timeslices
+  
+  Emissions_flows_prc = Emissions_flows_prc %>% mutate(CO2eq_kt = emissions_kt*GWP) %>%
+    group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Emissions)%>%
+    summarise(emissions_kt = sum(emissions_kt),CO2eq_kt = sum(CO2eq_kt))# sum over timeslices
+  
   Emissions_flows_prc$Emissions_source = 'Process'
   Emissions_flows_prc$Emissions = paste(Emissions_flows_prc$Emissions,'_prc',sep = '')#add a suffix to denote process emissions
   Emissions_flows_prc = ungroup(Emissions_flows_prc)
