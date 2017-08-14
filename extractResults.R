@@ -680,11 +680,11 @@ processGDX <- function(gdxPath,gdxname){
   
   #get total flow in to each sector+subsector for each commodity
   
-  Emissions_flows = F_INa[!(grepl('ELC',F_INa$Process))&!(grepl(myexclusions,F_INa$Process)),]# get all flow in's except electricity and exports
+  Emissions_flows = F_IN[!(grepl('ELC',F_IN$Process))&!(grepl(myexclusions,F_IN$Process)),]# get all flow in's except electricity and exports
   Emissions_flows = merge(Emissions_flows,emissionsFactors)#add emissions factors column from csv
   Emissions_flows = Emissions_flows %>% mutate(emissions_kt = ktPJ*F_IN)#calculate ghg kt 
   Emissions_flows = Emissions_flows %>% mutate(CO2eq_kt = emissions_kt*GWP)
-  Emissions_flows = Emissions_flows %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Commodity_Name,
+  Emissions_flows = Emissions_flows %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Commodity_Name,Tech.Description,
                                                  Emissions) %>% summarise(emissions_kt = sum(emissions_kt),CO2eq_kt = sum(CO2eq_kt))#sum over timeslices
   names(Emissions_flows)[names(Emissions_flows) =='Commodity_Name'] = 'Emissions_source'
   Emissions_flows = ungroup(Emissions_flows)
@@ -695,26 +695,26 @@ processGDX <- function(gdxPath,gdxname){
   femissions = paste(unique(emissionsFactors[,'Emissions']),'F',sep = '')
   
   #get all processes that produce femissions
-  Emissions_flows_prc = F_OUT[(grepl(paste(femissions,collapse = '|'),F_OUT$Commodity)),!(names(F_OUT) %in% mycols)] 
-  names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'F_OUT'] = 'emissions_kt' #change name of FOUT to kt. since this is not PJ.
-  names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'Commodity'] = 'Emissions' # change name of commodity to Emission
-  
-  tmp = emissionsFactors[,-1] # to add GWP for process emissions
-  tmp$Emissions = paste(tmp$Emissions,'F',sep ='')
-  
-  Emissions_flows_prc = merge(Emissions_flows_prc,tmp)
-  Emissions_flows_prc = addPRCmap(Emissions_flows_prc)
-  
-  Emissions_flows_prc = Emissions_flows_prc %>% mutate(CO2eq_kt = emissions_kt*GWP) %>%
-    group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Emissions)%>%
-    summarise(emissions_kt = sum(emissions_kt),CO2eq_kt = sum(CO2eq_kt))# sum over timeslices
-  
-  Emissions_flows_prc$Emissions_source = 'Process'
-  Emissions_flows_prc$Emissions = paste(Emissions_flows_prc$Emissions,'_prc',sep = '')#add a suffix to denote process emissions
-  Emissions_flows_prc = ungroup(Emissions_flows_prc)
-  Emissions_flows_prc$Emissions= sapply(Emissions_flows_prc$Emissions,addEmisNames)
-  Emissions_flows_prc = droplevels(Emissions_flows_prc)
-  
+    Emissions_flows_prc = F_OUT[(grepl(paste(femissions,collapse = '|'),F_OUT$Commodity)),!(names(F_OUT) %in% mycols)] 
+    names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'F_OUT'] = 'emissions_kt' #change name of FOUT to kt. since this is not PJ.
+    names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'Commodity'] = 'Emissions' # change name of commodity to Emission
+    
+    tmp = emissionsFactors[seq(1,length(unique(emissionsFactors[,'Emissions']))),-1] # to add GWP for process emissions
+    tmp$Emissions = paste(tmp$Emissions,'F',sep ='')
+    
+    Emissions_flows_prc = merge(Emissions_flows_prc,tmp)
+    Emissions_flows_prc = addPRCmap(Emissions_flows_prc)
+    
+    Emissions_flows_prc = Emissions_flows_prc %>% mutate(CO2eq_kt = emissions_kt*GWP) %>%
+      group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Tech.Description,Emissions)%>%
+      summarise(emissions_kt = sum(emissions_kt),CO2eq_kt = sum(CO2eq_kt))# sum over timeslices
+    
+    Emissions_flows_prc$Emissions_source = 'Process'
+    Emissions_flows_prc$Emissions = paste(Emissions_flows_prc$Emissions,'_prc',sep = '')#add a suffix to denote process emissions
+    Emissions_flows_prc = ungroup(Emissions_flows_prc)
+    #Emissions_flows_prc$Emissions= sapply(Emissions_flows_prc$Emissions,addEmisNames)
+    Emissions_flows_prc = droplevels(Emissions_flows_prc)
+    
   #COmbine the Emissions and process emissions together
   
   All_emissions = rbind(Emissions_flows,Emissions_flows_prc)
