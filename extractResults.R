@@ -692,8 +692,11 @@ processGDX <- function(gdxPath,gdxname){
   #Emissions_flows$Emissions = sapply(Emissions_flows$Emissions,addEmisNames) #add emissions names, some of them are xyzCH4 etc.
   
   #some have processt emissions (catch these on the flow_out) - no need to convert from PJ 
-  Emissions_flows_prc = F_OUT[(grepl(myEmisTypes_code,F_OUT$Commodity))&!(grepl('^X',F_OUT$Process)),!(names(F_OUT) %in% mycols)] #get all not X processes that DO have myEmisTypes
-  names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'F_OUT'] = 'emissions_kt' #change name of FOUT to kt
+  femissions = paste(unique(emissionsFactors[,'Emissions']),'F',sep = '')
+  
+  #get all processes that produce femissions
+  Emissions_flows_prc = F_OUT[(grepl(paste(femissions,collapse = '|'),F_OUT$Commodity)),!(names(F_OUT) %in% mycols)] 
+  names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'F_OUT'] = 'emissions_kt' #change name of FOUT to kt. since this is not PJ.
   names(Emissions_flows_prc)[names(Emissions_flows_prc) == 'Commodity'] = 'Emissions' # change name of commodity to Emission
   
   tmp = emissionsFactors[,-1] # to add GWP for process emissions
