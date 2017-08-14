@@ -683,8 +683,9 @@ processGDX <- function(gdxPath,gdxname){
   Emissions_flows = F_INa[!(grepl('ELC',F_INa$Process))&!(grepl(myexclusions,F_INa$Process)),]# get all flow in's except electricity and exports
   Emissions_flows = merge(Emissions_flows,emissionsFactors)#add emissions factors column from csv
   Emissions_flows = Emissions_flows %>% mutate(emissions_kt = ktPJ*F_IN)#calculate ghg kt 
+  Emissions_flows = Emissions_flows %>% mutate(CO2eq_kt = emissions_kt*GWP)
   Emissions_flows = Emissions_flows %>% group_by(Region,Process,Year,Sector,Subsector,Subsubsector,Commodity_Name,
-                                                 Emissions) %>% summarise(emissions_kt = sum(emissions_kt))#sum over timeslices
+                                                 Emissions) %>% summarise(emissions_kt = sum(emissions_kt),CO2eq_kt = sum(CO2eq_kt))#sum over timeslices
   names(Emissions_flows)[names(Emissions_flows) =='Commodity_Name'] = 'Emissions_source'
   Emissions_flows = ungroup(Emissions_flows)
   Emissions_flows = droplevels(Emissions_flows)
