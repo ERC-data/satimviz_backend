@@ -12,7 +12,7 @@ library(shiny)
 GAMS_lib_dir = 'C:/GAMS/win64/24.7' 
 
 #main working directory for this file/script and colourcoding files etc. 
-workdir = 'C:/EMOD/satimviz_backend/'
+workdir = 'C:/EMOD/satimviz/processing/'
 
 #the GDX files location
 gdxLocation = 'C:/EMOD/GDXout/'

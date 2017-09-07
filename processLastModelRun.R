@@ -29,7 +29,7 @@ GAMS_lib_dir = 'C:/GAMS/win64/24.7'
 igdx(GAMS_lib_dir) 
 
 #main working directory for this file/script and colourcoding files etc. 
-workdir = paste(getwd(),'satimviz_backend/',sep = '/') # this is also needed for the extractResults.R script
+workdir = paste(getwd(),'satimviz/processing/',sep = '/') # this is also needed for the extractResults.R script
 
 
 #LOAD FUNCTIONS
