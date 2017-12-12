@@ -12,11 +12,11 @@ library(shiny)
 GAMS_lib_dir = 'C:/GAMS/win64/24.7' 
 
 #main working directory for this file/script and colourcoding files etc. 
-workdir = 'C:/EMOD/satimviz/processing/'
+workdir = 'C:/SATIMGE_02/satimviz/processing/'
 
 #the GDX files location
-gdxLocation = 'C:/EMOD/GDXout/'
-saverdspath = 'C:/EMOD/RDSfiles/'
+gdxLocation = 'C:/SATIMGE_02/GDXout/'
+saverdspath = 'C:/SATIMGE_02/RDSfiles/'
 
 # connect to the GAMS library.
 igdx(GAMS_lib_dir) 

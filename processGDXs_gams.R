@@ -14,8 +14,8 @@ library(shiny)
   gdxfile = cmd_gdxfile[1]
 
 #the GDX files location
-gdxLocation = 'C:/EMOD/GDXout/'
-saverdspath = 'C:/EMOD/RDSfiles/'
+gdxLocation = 'C:/SATIMGE_02/GDXout/'
+saverdspath = 'C:/SATIMGE_02/RDSfiles/'
 
 #file paths used in extractResults
   
@@ -25,7 +25,7 @@ saverdspath = 'C:/EMOD/RDSfiles/'
   igdx(GAMS_lib_dir) 
   
   #main working directory for this file/script and colourcoding files etc. 
-  workdir = 'C:/EMOD/satimviz/processing/' # this is also needed for the extractResults.R script
+  workdir = 'C:/SATIMGE_02/satimviz/processing/' # this is also needed for the extractResults.R script
   
 
 #LOAD FUNCTIONS
